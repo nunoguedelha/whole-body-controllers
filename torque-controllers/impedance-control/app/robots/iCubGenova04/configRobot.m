@@ -17,11 +17,15 @@ WBTConfigRobot.LocalName = 'WBT';
 %                                      'r_hip_pitch','r_hip_roll','r_hip_yaw','r_knee','r_ankle_pitch','r_ankle_roll'};
 WBTConfigRobot.ControlBoardsNames = {'right_leg'};
 WBTConfigRobot.ControlledJoints   = {'r_knee'};
+% WBTConfigRobot.ControlledJoints   = {'r_hip_pitch','r_hip_roll','r_hip_yaw','r_knee','r_ankle_pitch','r_ankle_roll'};
 
 % Gains of the torque-to-current control
 Kc = 0.0;
 Kv = 0.000655;
 Kt = 0.187259;
+% Kc = [ 0.0 0.0 0.0 0.0 0.0 0.0 ];
+% Kv = [ 0.001013 0.000458 0.000980 0.000655 0.001343 0.000520 ];
+% Kt = [ 0.142674 -0.158045 0.132443 0.187259 -0.150921 -0.096339 ];
 
 % References for the demo movements
 if MOVING

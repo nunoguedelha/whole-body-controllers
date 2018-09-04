@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.306"
+    ComputedModelVersion    "1.309"
     NumModelReferences	    0
     NumTestPointedSignals   1
     TestPointedSignal {
@@ -176,7 +176,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [2168.0, 126.0, 1835.0, 1036.0]
+      Location		      [2210.0, 129.0, 1835.0, 1036.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -198,11 +198,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"481"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1797.0, 889.0]
-	ZoomFactor		[2.0]
-	Offset			[-263.29459685114506, -228.61679389312977]
+	ZoomFactor		[1.25]
+	Offset			[100.79999999999995, -8.25]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -236,9 +236,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "lrapetti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Sep 04 13:44:55 2018"
-  RTWModifiedTimeStamp	  457969489
-  ModelVersionFormat	  "1.%<AutoIncrement:306>"
+  LastModifiedDate	  "Tue Sep 04 16:48:30 2018"
+  RTWModifiedTimeStamp	  457977700
+  ModelVersionFormat	  "1.%<AutoIncrement:309>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1399,8 +1399,8 @@ Model {
   }
   System {
     Name		    "impedanceControl"
-    Location		    [2168, 126, 4003, 1162]
-    Open		    off
+    Location		    [2210, 129, 4045, 1165]
+    Open		    on
     PortBlocksUseCompactNotation off
     SetDomainSpec	    off
     DomainSpecType	    "Deduce"
@@ -1416,7 +1416,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "488"
+    SIDHighWatermark	    "489"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -2997,14 +2997,14 @@ Model {
       Name		      "Torque to Current"
       SID		      "481"
       Ports		      [1, 1]
-      Position		      [875, 254, 975, 296]
+      Position		      [940, 254, 1040, 296]
       ZOrder		      662
       RequestExecContextInheritance off
       ContentPreviewEnabled   on
       System {
 	Name			"Torque to Current"
 	Location		[2168, 126, 4003, 1162]
-	Open			on
+	Open			off
 	PortBlocksUseCompactNotation off
 	SetDomainSpec		off
 	DomainSpecType		"Deduce"
@@ -3032,7 +3032,7 @@ Model {
 	  Name			  "Get Motor Measurement1"
 	  SID			  "477"
 	  Ports			  [0, 1]
-	  Position		  [-20, -22, 50, 12]
+	  Position		  [-110, -22, -40, 12]
 	  ZOrder		  654
 	  BackgroundColor	  "[0.513700, 0.674500, 1.000000]"
 	  LibraryVersion	  "1.625"
@@ -3118,7 +3118,7 @@ Model {
 	  Name			  "To Workspace2"
 	  SID			  "478"
 	  Ports			  [1]
-	  Position		  [-35, -110, 25, -80]
+	  Position		  [-105, -90, -45, -60]
 	  ZOrder		  655
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -3130,6 +3130,17 @@ Model {
 	  SampleTime		  "-1"
 	}
 	Block {
+	  BlockType		  Gain
+	  Name			  "rad2deg"
+	  SID			  "489"
+	  Position		  [5, -20, 35, 10]
+	  ZOrder		  658
+	  Gain			  "180/pi"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "currDes"
 	  SID			  "483"
@@ -3138,27 +3149,19 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  4
-	  SrcBlock		  "Get Motor Measurement1"
+	  ZOrder		  34
+	  SrcBlock		  "rad2deg"
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    ZOrder		    21
+	    ZOrder		    36
 	    Points		    [0, -50]
-	    Branch {
-	      ZOrder		      22
-	      Points		      [0, -40]
-	      DstBlock		      "To Workspace2"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      20
-	      DstBlock		      "Sign"
-	      DstPort		      1
-	    }
+	    DstBlock		    "Sign"
+	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    3
+	    Points		    [0, 0]
 	    DstBlock		    "Kv"
 	    DstPort		    1
 	  }
@@ -3216,6 +3219,23 @@ Model {
 	  Points		  [30, 0]
 	  DstBlock		  "Sum"
 	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  35
+	  SrcBlock		  "Get Motor Measurement1"
+	  SrcPort		  1
+	  Points		  [17, 0]
+	  Branch {
+	    ZOrder		    38
+	    Points		    [0, -70]
+	    DstBlock		    "To Workspace2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    37
+	    DstBlock		    "rad2deg"
+	    DstPort		    1
+	  }
 	}
       }
     }
