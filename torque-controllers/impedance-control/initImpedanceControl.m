@@ -28,7 +28,7 @@ clc
 
 % setenv('YARP_ROBOT_NAME','iCubGenova04');
 % setenv('YARP_ROBOT_NAME','iCubGenova02');
-  setenv('YARP_ROBOT_NAME','icubGazeboSim');
+ setenv('YARP_ROBOT_NAME','icubGazeboSim');
 % setenv('YARP_ROBOT_NAME','iCubGazeboV2_5');
 
 % simulation time  
@@ -37,7 +37,7 @@ Config.SIMULATION_TIME = inf;
 
 % Default behaviour: gravity compensation. If MOVING = true, the robot will also move 
 % all actuated joints following a sine trajectory
-MOVING                = false;
+MOVING                = true;
 
 % If Config.SAVE_WORKSPACE = True, every time the simulink model is run the
 % workspace is saved after stopping the simulation
