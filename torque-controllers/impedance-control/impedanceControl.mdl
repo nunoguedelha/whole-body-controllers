@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.315"
+    ComputedModelVersion    "1.316"
     NumModelReferences	    0
     NumTestPointedSignals   1
     TestPointedSignal {
@@ -176,7 +176,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [65.0, 24.0, 1855.0, 1056.0]
+      Location		      [73.0, 641.0, 1855.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -198,11 +198,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"481"
 	Extents			[1817.0, 937.0]
-	ZoomFactor		[1.743787961283743]
-	Offset			[236.97150094459107, 79.082013752922478]
+	ZoomFactor		[2.4062375218040057]
+	Offset			[-135.8182119899385, -214.20230837758524]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -236,9 +236,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "lrapetti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 06 11:44:14 2018"
-  RTWModifiedTimeStamp	  458135052
-  ModelVersionFormat	  "1.%<AutoIncrement:315>"
+  LastModifiedDate	  "Fri Sep 07 13:59:07 2018"
+  RTWModifiedTimeStamp	  458229540
+  ModelVersionFormat	  "1.%<AutoIncrement:316>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1399,8 +1399,8 @@ Model {
   }
   System {
     Name		    "impedanceControl"
-    Location		    [65, 24, 1920, 1080]
-    Open		    on
+    Location		    [73, 641, 1928, 1697]
+    Open		    off
     PortBlocksUseCompactNotation off
     SetDomainSpec	    off
     DomainSpecType	    "Deduce"
@@ -1416,7 +1416,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "174"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "496"
+    SIDHighWatermark	    "497"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -3004,8 +3004,8 @@ Model {
       ContentPreviewEnabled   on
       System {
 	Name			"Torque to Current"
-	Location		[65, 24, 1920, 1080]
-	Open			off
+	Location		[73, 641, 1928, 1697]
+	Open			on
 	PortBlocksUseCompactNotation off
 	SetDomainSpec		off
 	DomainSpecType		"Deduce"
@@ -3019,7 +3019,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"162"
+	ZoomFactor		"241"
 	Block {
 	  BlockType		  Inport
 	  Name			  "tauDes"
@@ -3087,12 +3087,11 @@ Model {
 	  BlockType		  Sum
 	  Name			  "Sum"
 	  SID			  "469"
-	  Ports			  [3, 1]
-	  Position		  [325, -15, 345, 5]
+	  Ports			  [2, 1]
+	  Position		  [385, -15, 405, 5]
 	  ZOrder		  652
 	  ShowName		  off
 	  IconShape		  "round"
-	  Inputs		  "+++"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -3101,11 +3100,24 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "497"
+	  Ports			  [2, 1]
+	  Position		  [205, -40, 225, -20]
+	  ZOrder		  660
+	  ShowName		  off
+	  IconShape		  "round"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  ToWorkspace
 	  Name			  "To Workspace1"
 	  SID			  "476"
 	  Ports			  [1]
-	  Position		  [380, -110, 440, -80]
+	  Position		  [440, -110, 500, -80]
 	  ZOrder		  653
 	  VariableName		  "currDes"
 	  MaxDataPoints		  "inf"
@@ -3134,8 +3146,9 @@ Model {
 	  BlockType		  Gain
 	  Name			  "friction compensation gain"
 	  SID			  "495"
-	  Position		  [230, -20, 260, 10]
+	  Position		  [290, -45, 320, -15]
 	  ZOrder		  659
+	  NamePlacement		  "alternate"
 	  Gain			  "Kfc"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3156,7 +3169,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "currDes"
 	  SID			  "483"
-	  Position		  [520, -12, 550, 2]
+	  Position		  [580, -12, 610, 2]
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
@@ -3195,19 +3208,12 @@ Model {
 	  }
 	}
 	Line {
-	  ZOrder		  18
+	  ZOrder		  69
 	  SrcBlock		  "Kt"
 	  SrcPort		  1
-	  Points		  [155, 0]
+	  Points		  [215, 0]
 	  DstBlock		  "Sum"
-	  DstPort		  3
-	}
-	Line {
-	  ZOrder		  19
-	  SrcBlock		  "Kv"
-	  SrcPort		  1
-	  DstBlock		  "friction compensation gain"
-	  DstPort		  1
+	  DstPort		  2
 	}
 	Line {
 	  ZOrder		  11
@@ -3221,14 +3227,6 @@ Model {
 	  SrcBlock		  "Sign"
 	  SrcPort		  1
 	  DstBlock		  "Kc"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  25
-	  SrcBlock		  "Kc"
-	  SrcPort		  1
-	  Points		  [155, 0]
-	  DstBlock		  "Sum"
 	  DstPort		  1
 	}
 	Line {
@@ -3249,10 +3247,31 @@ Model {
 	  }
 	}
 	Line {
-	  ZOrder		  62
+	  ZOrder		  65
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "friction compensation gain"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  66
 	  SrcBlock		  "friction compensation gain"
 	  SrcPort		  1
 	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  67
+	  SrcBlock		  "Kc"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  68
+	  SrcBlock		  "Kv"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
 	  DstPort		  2
 	}
       }
