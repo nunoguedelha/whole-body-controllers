@@ -34,25 +34,25 @@ T_r_leg = diag(ones(6,1));
 T_l_leg = diag(ones(6,1));
 
 % joint torque control via current gains
-Kt_torso = [   -0.245227       -0.297433       -0.465476    ];
-Kt_r_arm = [   -0.160695       -0.391429       -0.636335       -0.15    ];
-Kt_l_arm = [    0.160695        0.391429        0.636335        0.15    ];
-Kt_r_leg = [  -0.142674        0.158045      -0.132443      -0.187259        0.150921        0.096339    ];
-Kt_l_leg = [   0.142674       -0.158045       0.132443       0.187259       -0.150921       -0.096339    ]; 
+Kt_torso = [  -0.15        -0.15       -0.15     ];
+Kt_r_arm = [  -0.15       -0.15      -0.15      -0.15    ];
+Kt_l_arm = [   0.15        0.15       0.15       0.15    ];
+Kt_r_leg = [   0.196517      -0.185415        0.185703        0.270782      -0.181173      -0.172076    ];
+Kt_l_leg = [  -0.175560       0.177832       -0.175744       -0.230098       0.162240       0.162960    ]; 
 
-Kv_torso = [   0.000612       0.000436       0.000447    ];
-Kv_r_arm = [   0.000249       0.000391       0.000361       0.0004    ];
-Kv_l_arm = [   0.000249       0.000391       0.000361       0.0004    ];
-Kv_r_leg = [   0.000457       0.000458       0.000980       0.000655       0.001343       0.000520    ];
-Kv_l_leg = [   0.000457       0.000458       0.000980       0.000655       0.001343       0.000520    ];
+Kv_torso = [   0.0004       0.0004        0.0004    ];
+Kv_r_arm = [   0.0004       0.0004        0.0004       0.0004    ];
+Kv_l_arm = [   0.0004       0.0004        0.0004       0.0004    ];
+Kv_r_leg = [   0.001466       0.000439       0.001418       0.001012      0.001526       0.001293    ];
+Kv_l_leg = [   0.001641       0.000641       0.001095       0.000882      0.001652       0.002557    ];
 
-Kc_torso = [ 0.0 0.0 0.0 ];
-Kc_r_arm = [ 0.0 0.0 0.0 0.0 ];
-Kc_l_arm = [ 0.0 0.0 0.0 0.0 ];
-Kc_r_leg = [ 0.0 0.0 0.0 0.0 0.0 0.0 ];
-Kc_l_leg = [ 0.0 0.0 0.0 0.0 0.0 0.0 ];
+Kc_torso = [ 0.0         0.0        0.0 ];
+Kc_r_arm = [ 0.0         0.0        0.0       0.0 ];
+Kc_l_arm = [ 0.0         0.0        0.0       0.0 ];
+Kc_r_leg = [ 0.196517       0.185415       0.185703       0.270782     0.181173       0.172076  ];
+Kc_l_leg = [ 0.175560       0.177832       0.175744       0.230098     0.162240       0.162960  ];
 
-Kfc = 0.0;
+Kfc = 0.4;
 
 % map board to joints
 boardMap = {1:3, 4:7, 8:11, 12:17, 18:23};
@@ -69,7 +69,7 @@ if CONTROL_BOARD_1_OR_JOINTS_0_SELECTOR
     T = blkdiag(T_list{indexControlledBoardNames});
     
     Kt_list = {Kt_torso, Kt_l_arm, Kt_r_arm, Kt_l_leg, Kt_r_leg};
-    Kt = 0*[Kt_list{indexControlledBoardNames}];
+    Kt = [Kt_list{indexControlledBoardNames}];
     Kv_list = {Kv_torso, Kv_l_arm, Kv_r_arm, Kv_l_leg, Kv_r_leg};
     Kv = [Kv_list{indexControlledBoardNames}];
     Kc_list = {Kc_torso, Kc_l_arm, Kc_r_arm, Kc_l_leg, Kc_r_leg};
@@ -78,7 +78,7 @@ if CONTROL_BOARD_1_OR_JOINTS_0_SELECTOR
     WBTConfigRobot.ControlBoardsNames = ControlledBoardNames;
     WBTConfigRobot.ControlledJoints = AllJoints(cell2mat(boardMap(indexControlledBoardNames)));
     
-    curr0 = 2;
+    curr0 = 0;
     K0 = zeros(size(Kc));
     K0(JOINTS_TO_MOVE) = curr0;
 else
@@ -92,25 +92,25 @@ PLOT_SELECTOR = zeros(ROBOT_DOF, 1);
 PLOT_SELECTOR(JOINTS_TO_PLOT) = 1;
 
 MOVE_SELECTOR = zeros(1, ROBOT_DOF);
-MOVE_SELECTORT(JOINTS_TO_MOVE) = 1;
+MOVE_SELECTOR(JOINTS_TO_MOVE) = 1;
 
 % References for the demo movements
 if MOVING
     % Impedance gains
-    Kp     = 40*diag(ones(1,ROBOT_DOF));
+    Kp     = 30*diag(MOVE_SELECTOR);
     Kd     = 2.5*sqrt(Kp);
     
-    AMPLS  = 10.0*ones(1,ROBOT_DOF);
-    FREQS  = 0.2*ones(1,ROBOT_DOF);    % Impedance gains
+    AMPLS  = 20.0*MOVE_SELECTOR;
+    FREQS  = 0.5*MOVE_SELECTOR;    % Impedance gains
 else
     % Impedance gains
-    Kp     = 0*diag(ones(1,ROBOT_DOF));     
-    Kd     = 0*diag(ones(1,ROBOT_DOF));
+    Kp     = 0*diag(MOVE_SELECTOR);     
+    Kd     = 0*diag(MOVE_SELECTOR);
     % Kp     = 20*diag(ones(1,ROBOT_DOF));
     % Kd     = 2.0*sqrt(Kp);
     
-    AMPLS  = 0*ones(1,ROBOT_DOF);
-    FREQS  = 0*ones(1,ROBOT_DOF);
+    AMPLS  = 0*MOVE_SELECTOR;
+    FREQS  = 0*MOVE_SELECTOR;
 end
     
 if size(Kp,1) ~= ROBOT_DOF 

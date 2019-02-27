@@ -13,7 +13,7 @@
 %  * WITHOUT ANY WARRANTY; without even the implied warranty of
 %  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
 %  * Public License for more details
-%  */
+%  */1
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear variables
 clc
@@ -26,9 +26,9 @@ clc
 % 
 % and set the environmental variable YARP_ROBOT_NAME = icubGazeboSim. 
 
-% setenv('YARP_ROBOT_NAME','iCubGenova04');
+setenv('YARP_ROBOT_NAME','iCubGenova04');
 % setenv('YARP_ROBOT_NAME','iCubGenova02');
-setenv('YARP_ROBOT_NAME','icubGazeboSim');
+% setenv('YARP_ROBOT_NAME','icubGazeboSim');
 % setenv('YARP_ROBOT_NAME','iCubGazeboV2_5');
 
 % simulation time  
@@ -41,7 +41,7 @@ MOVING                = true;
 
 % If Config.SAVE_WORKSPACE = True, every time the simulink model is run the
 % workspace is saved after stopping the simulation
-Config.SAVE_WORKSPACE = true;
+Config.SAVE_WORKSPACE = false;
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONFIGURATIONS COMPLETED: loading gains and parameters for the specific robot
