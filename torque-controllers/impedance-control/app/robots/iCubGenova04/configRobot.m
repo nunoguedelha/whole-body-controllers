@@ -2,8 +2,9 @@
 Config.ON_GAZEBO = false;
 % ROBOT_DOF        = 23;
 ROBOT_DOF        = 1;
+TORQUE_CONTROL_JTCVC_1_OR_CLASSIC_0 = 0;
 
-% Robot configuration for WBT3.0
+% Robot configurations for WBT3.0
 WBTConfigRobot           = WBToolbox.Configuration;
 WBTConfigRobot.RobotName = 'icub';
 WBTConfigRobot.UrdfFile  = 'model.urdf';
@@ -22,7 +23,7 @@ ControlledJoints = {}; % used when CONTROL_BOARD_1_OR_JOINTS_0_SELECTOR==0
 
 % configuration
 CONTROL_BOARD_1_OR_JOINTS_0_SELECTOR = 1;
-JTCVC_1_OR_MCC_0_SELECTOR = 0;
+JTCVC_1_OR_MCC_0_SELECTOR = 1;
 JOINTS_TO_PLOT = [ 2 ]; % joint for which current tau and qj is plotted (desired and measured)
 JOINTS_TO_MOVE = [ 2 ]; % joints that are moved when MOVING==1
 
@@ -97,11 +98,11 @@ MOVE_SELECTOR(JOINTS_TO_MOVE) = 1;
 % References for the demo movements
 if MOVING
     % Impedance gains
-    Kp     = 30*diag(MOVE_SELECTOR);
-    Kd     = 2.5*sqrt(Kp);
+    Kp     = 100*diag(MOVE_SELECTOR);
+    Kd     = 1*sqrt(Kp);
     
     AMPLS  = 20.0*MOVE_SELECTOR;
-    FREQS  = 0.5*MOVE_SELECTOR;    % Impedance gains
+    FREQS  = 0.1*MOVE_SELECTOR;    % Impedance gains
 else
     % Impedance gains
     Kp     = 0*diag(MOVE_SELECTOR);     
@@ -119,3 +120,11 @@ end
 if size(Kd,1) ~= ROBOT_DOF 
     error('Dimension of Kd different from ROBOT_DOF')
 end
+
+WBTConfigRobot2           = WBTConfigRobot.copy();
+if TORQUE_CONTROL_JTCVC_1_OR_CLASSIC_0
+    WBTConfigRobot2.RobotName = 'icub/jtcvc';
+else
+    WBTConfigRobot2.RobotName = 'icub';
+end
+
