@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.371"
+    ComputedModelVersion    "1.383"
     NumModelReferences	    0
     NumTestPointedSignals   1
     TestPointedSignal {
@@ -23,7 +23,7 @@ Model {
     HasTerminateEvent	    0
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 17
+    NumExternalFileReferences 18
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/Utilities/Configuration"
       Path		      "impedanceControl/Configuration"
@@ -115,6 +115,12 @@ Model {
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
+      Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
+      Path		      "impedanceControl/Visualization/GetMotorMeasurement1"
+      SID		      "588"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
       Reference		      "WBToolboxLibrary/Utilities/Simulator Synchronizer"
       Path		      "impedanceControl/synchronizer/GAZEBO_SYNCHRONIZER/Simulator Synchronizer"
       SID		      "304"
@@ -175,32 +181,20 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "533"
-	  Extents		  [1815.0, 870.0]
-	  ZoomFactor		  [1.1405514458641559]
-	  Offset		  [47.868971108490427, 126.22523584905656]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "543"
-	  Extents		  [1815.0, 870.0]
-	  ZoomFactor		  [3.0]
-	  Offset		  [564.76692708333326, 183.16666666666669]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"533"
+	Extents			[1815.0, 876.0]
+	ZoomFactor		[0.98991138345037122]
+	Offset			[63.792665748735089, 124.15514863221824]
       }
       Object {
 	$PropName		"DockComponentsInfo"
-	$ObjectID		7
+	$ObjectID		6
 	$ClassName		"Simulink.DockComponentInfo"
 	Type			"GLUE2:PropertyInspector"
 	ID			"Property Inspector"
@@ -230,9 +224,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "icub"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 24 14:15:44 2019"
-  RTWModifiedTimeStamp	  478014998
-  ModelVersionFormat	  "1.%<AutoIncrement:371>"
+  LastModifiedDate	  "Mon Apr 29 10:24:12 2019"
+  RTWModifiedTimeStamp	  478300579
+  ModelVersionFormat	  "1.%<AutoIncrement:383>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -286,7 +280,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "impedanceControl"
     overrideMode_	    [0.0]
@@ -305,7 +299,7 @@ Model {
   }
   Object {
     $PropName		    "InstrumentedSignals"
-    $ObjectID		    9
+    $ObjectID		    8
     $ClassName		    "Simulink.HMI.InstrumentedSignals"
     Array {
       Type		      "Struct"
@@ -359,7 +353,7 @@ Model {
   }
   Object {
     $PropName		    "StreamingClients"
-    $ObjectID		    10
+    $ObjectID		    9
     $ClassName		    "Simulink.HMI.StreamingClients"
     Array {
       Type		      "Struct"
@@ -422,7 +416,7 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      11
+      $ObjectID		      10
       Version		      "1.18.0"
       DisabledProps	      []
       Description	      ""
@@ -430,7 +424,7 @@ Model {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -471,7 +465,7 @@ Model {
 	  MinimalZcImpactIntegration off
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -512,7 +506,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.18.0"
 	  Array {
 	    Type		    "Cell"
@@ -579,7 +573,7 @@ Model {
 	  LabelGuidedReuse	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.18.0"
 	  Array {
 	    Type		    "Cell"
@@ -696,7 +690,7 @@ Model {
 	  UnitDatabase		  ""
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -744,7 +738,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -763,7 +757,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  18
+	  $ObjectID		  17
 	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -793,7 +787,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.18.0"
 	  Array {
 	    Type		    "Cell"
@@ -880,7 +874,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      20
+	      $ObjectID		      19
 	      Version		      "1.18.0"
 	      Array {
 		Type			"Cell"
@@ -968,7 +962,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      21
+	      $ObjectID		      20
 	      Version		      "1.18.0"
 	      Array {
 		Type			"Cell"
@@ -1071,7 +1065,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  22
+	  $ObjectID		  21
 	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -1121,11 +1115,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    11
+    $ObjectID		    10
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    23
+    $ObjectID		    22
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1276,6 +1270,14 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      Outport
       Port		      "1"
       OutMin		      "[]"
@@ -1413,7 +1415,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "121"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "584"
+    SIDHighWatermark	    "589"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -1440,7 +1442,7 @@ Model {
       ContentPreviewEnabled   on
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		24
+	$ObjectID		23
 	$ClassName		"Simulink.Mask"
 	IconFrame		"off"
 	IconOpaque		"opaque-with-ports"
@@ -1449,7 +1451,7 @@ Model {
       System {
 	Name			"Controller"
 	Location		[67, 27, 1920, 1080]
-	Open			on
+	Open			off
 	PortBlocksUseCompactNotation off
 	SetDomainSpec		off
 	DomainSpecType		"Deduce"
@@ -1519,7 +1521,7 @@ Model {
 	  ContentPreviewEnabled	  on
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    25
+	    $ObjectID		    24
 	    $ClassName		    "Simulink.Mask"
 	    IconFrame		    "off"
 	    RunInitForIconRedraw    "off"
@@ -1611,7 +1613,7 @@ Model {
 	  ContentPreviewEnabled	  on
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    26
+	    $ObjectID		    25
 	    $ClassName		    "Simulink.Mask"
 	    IconFrame		    "off"
 	    RunInitForIconRedraw    "off"
@@ -1970,7 +1972,7 @@ Model {
       ContentPreviewEnabled   on
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		27
+	$ObjectID		26
 	$ClassName		"Simulink.Mask"
 	IconFrame		"off"
 	RunInitForIconRedraw	"off"
@@ -2883,7 +2885,7 @@ Model {
       ContentPreviewEnabled   on
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		28
+	$ObjectID		27
 	$ClassName		"Simulink.Mask"
 	IconFrame		"off"
 	RunInitForIconRedraw	"off"
@@ -2905,12 +2907,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"114"
+	ZoomFactor		"99"
 	Block {
 	  BlockType		  Inport
 	  Name			  "currentDesired"
 	  SID			  "536"
-	  Position		  [355, 178, 385, 192]
+	  Position		  [355, 148, 385, 162]
 	  ZOrder		  703
 	  IconDisplay		  "Port number"
 	}
@@ -2918,7 +2920,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "currentMeasured"
 	  SID			  "537"
-	  Position		  [355, 243, 385, 257]
+	  Position		  [355, 213, 385, 227]
 	  ZOrder		  704
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -2963,45 +2965,60 @@ Model {
 	  BlockType		  Scope
 	  Name			  "Current"
 	  SID			  "474"
-	  Ports			  [2]
-	  Position		  [1065, 152, 1135, 283]
+	  Ports			  [3]
+	  Position		  [1065, 134, 1135, 266]
 	  ZOrder		  694
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','current_selected','DataLogging',true,'DataLoggingSaveFormat','Str"
-	  "ucture'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.3565','Ma"
-	  "xYLimReal','3.8185','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','3.8185','LegendVisibility','On','XGrid',tr"
+	  "ucture'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','0.47955','Ma"
+	  "xYLimReal','3.1526','YLabelReal','','MinYLimMag','0.47955','MaxYLimMag','3.1526','LegendVisibility','On','XGrid',tr"
 	  "ue,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686"
 	  "274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160"
 	  "78431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352"
 	  "94117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visib"
-	  "le','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visib"
-	  "le','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visib"
-	  "le','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visib"
-	  "le','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'Nu"
-	  "mLines',2,'LineNames',{{'currentDesired','currentMeasured'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDef"
-	  "aults',struct('MinYLimReal','-0.3565','MaxYLimReal','3.8185','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','3"
-	  ".8185','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',["
-	  "0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411"
-	  "764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.8313"
-	  "72549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuratio"
-	  "n('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measure"
-	  "ments',true,'Version','2018a')),'Version','2018a','Position',[68 1 1853 968])"
-	  NumInputPorts		  "2"
+	  "le','on'),[],[],struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct("
+	  "'Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct("
+	  "'Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct("
+	  "'Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'currentDesired'"
+	  "}},'ShowContent',true,'Placement',1),struct('MinYLimReal','0.06475','MaxYLimReal','3.27725','YLabelReal','','MinYLi"
+	  "mMag','0.00000','MaxYLimMag','14.21523','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
+	  "sColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666"
+	  "666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549"
+	  "019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098"
+	  "0392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),[]}},'UserDefinedChannelNames',"
+	  "{{}},'NumLines',1,'LineNames',{{'currentMeasured'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-5.2015"
+	  "6','MaxYLimReal','13.56406','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','14.21523','LegendVisibility','On',"
+	  "'XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450980"
+	  "3922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176470588"
+	  "2353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;"
+	  "0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{str"
+	  "uct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'PWM setpoint'}},'ShowContent',true"
+	  ",'Placement',3)},'DisplayPropertyDefaults',struct('YLabelReal','','LegendVisibility','On','XGrid',true,'YGrid',true"
+	  ",'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
+	  "ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7"
+	  "17647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 "
+	  "0.0745098039215686 0.650980392156863]),'DisplayLayoutDimensions',[3 1]),extmgr.Configuration('Tools','Plot Navigati"
+	  "on',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2"
+	  "018a','Measurements',struct('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[8.24374045801527 19."
+	  "1337265787647],'YCoordinates',[2.66852320799996 NaN],'CursorChannels',[1 1],'WaveformCursors',true,'ShowHorizontal'"
+	  ",false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',false,'SettingsPanelOpen',0,'MeasurementsPanelOpe"
+	  "n',1)))),'Version','2018a','Position',[68 1 1853 968])"
+	  NumInputPorts		  "3"
 	  Floating		  off
 	}
 	Block {
 	  BlockType		  Scope
 	  Name			  "Current1"
 	  SID			  "565"
-	  Ports			  [3]
-	  Position		  [1285, 154, 1355, 286]
+	  Ports			  [4]
+	  Position		  [1545, 525, 1615, 660]
 	  ZOrder		  717
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1','DataLogging',true,'DataLoggingSaveFormat','Structure"
-	  "'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.88822','MaxYLim"
-	  "Real','17.72057','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','17.72057','LegendVisibility','On','XGrid',tru"
+	  "'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-5.20156','MaxYLim"
+	  "Real','13.56406','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','13.56406','LegendVisibility','On','XGrid',tru"
 	  "e,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862"
 	  "74509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607"
 	  "8431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529"
@@ -3009,24 +3026,91 @@ Model {
 	  "e','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visibl"
 	  "e','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visibl"
 	  "e','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visibl"
-	  "e','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'Num"
-	  "Lines',3,'LineNames',{{'currentDesired','tauDesired','tauMeasured'}},'ShowContent',true,'Placement',1)},'DisplayPro"
-	  "pertyDefaults',struct('MinYLimReal','-1.88822','MaxYLimReal','17.72057','YLabelReal','','MinYLimMag','0.00000','Max"
-	  "YLimMag','17.72057','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'Axe"
-	  "sTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764"
-	  "706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862"
-	  "745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr"
-	  ".Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('To"
-	  "ols','Measurements',true,'Version','2018a')),'Version','2018a','Position',[68 1 1853 968])"
-	  NumInputPorts		  "3"
+	  "e','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'PWM se"
+	  "tpoint','',''}},'NumLines',3,'LineNames',{{'PWM setpoint','currentDesired','currentMeasured'}},'ShowContent',true,'"
+	  "Placement',1),struct('MinYLimReal','2.48739','MaxYLimReal','17.28836','YLabelReal','','MinYLimMag','0.00000','MaxYL"
+	  "imMag','16.67566','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesT"
+	  "ickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039"
+	  "215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215"
+	  "686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%"
+	  "<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),[]}},'UserDefinedChannelNames',{{}},'NumLines',2,'Lin"
+	  "eNames',{{'tauDesired','tauMeasured'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','0.23459','MaxYLimRea"
+	  "l','1.14454','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','16.67566','LegendVisibility','On','XGrid',true,'Y"
+	  "Grid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450"
+	  "9803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
+	  "372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117"
+	  "647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','"
+	  "on'),struct('Visible','on'),[],struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumL"
+	  "ines',2,'LineNames',{{'qjDesired','qjMeasured'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-0.20818',"
+	  "'MaxYLimReal','0.29352','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','16.67566','LegendVisibility','On','XGr"
+	  "id',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922"
+	  " 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353"
+	  " 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05"
+	  "88235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct("
+	  "'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'qjError'}},'ShowContent',true,'Placeme"
+	  "nt',4)},'DisplayPropertyDefaults',struct('YLabelReal','','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMag"
+	  "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrde"
+	  "r',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7176470588"
+	  "23529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098"
+	  "039215686 0.650980392156863]),'DisplayLayoutDimensions',[4 1]),extmgr.Configuration('Tools','Plot Navigation',true,"
+	  "'OnceAtStop',false,'PreviousAutoscale','XY','PreviousZoomMode','Pan'),extmgr.Configuration('Tools','Measurements',t"
+	  "rue,'Version','2018a')),'Version','2018a','Position',[68 1 1813 968])"
+	  NumInputPorts		  "4"
 	  Floating		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement1"
+	  SID			  "588"
+	  Ports			  [0, 1]
+	  Position		  [525, 288, 620, 322]
+	  ZOrder		  727
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor PWM"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "585"
+	  Ports			  [3, 1]
+	  Position		  [1305, 296, 1310, 334]
+	  ZOrder		  722
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "586"
+	  Ports			  [2, 1]
+	  Position		  [1305, 686, 1310, 724]
+	  ZOrder		  723
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  SID			  "587"
+	  Ports			  [2, 1]
+	  Position		  [1305, 496, 1310, 534]
+	  ZOrder		  724
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
 	}
 	Block {
 	  BlockType		  Selector
 	  Name			  "Selector1"
 	  SID			  "555"
 	  Ports			  [1, 1]
-	  Position		  [870, 231, 910, 269]
+	  Position		  [870, 201, 910, 239]
 	  ZOrder		  711
 	  ShowName		  off
 	  InputPortWidth	  "ROBOT_DOF"
@@ -3043,7 +3127,7 @@ Model {
 	  Name			  "Selector2"
 	  SID			  "554"
 	  Ports			  [1, 1]
-	  Position		  [870, 166, 910, 204]
+	  Position		  [870, 136, 910, 174]
 	  ZOrder		  710
 	  ShowName		  off
 	  InputPortWidth	  "ROBOT_DOF"
@@ -3128,7 +3212,7 @@ Model {
 	  Name			  "Selector7"
 	  SID			  "571"
 	  Ports			  [1, 1]
-	  Position		  [870, 776, 910, 814]
+	  Position		  [870, 851, 910, 889]
 	  ZOrder		  720
 	  ShowName		  off
 	  InputPortWidth	  "ROBOT_DOF"
@@ -3141,11 +3225,28 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Selector
+	  Name			  "Selector8"
+	  SID			  "589"
+	  Ports			  [1, 1]
+	  Position		  [750, 286, 790, 324]
+	  ZOrder		  728
+	  ShowName		  off
+	  InputPortWidth	  "ROBOT_DOF"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "JOINTS_TO_PLOT"
+	  OutputSizes		  "1"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PWM setpoint"
+	  }
+	}
+	Block {
 	  BlockType		  Sum
 	  Name			  "Sum"
 	  SID			  "570"
 	  Ports			  [2, 1]
-	  Position		  [790, 774, 815, 816]
+	  Position		  [790, 849, 815, 891]
 	  ZOrder		  719
 	  ShowName		  off
 	  Inputs		  "+-"
@@ -3184,27 +3285,27 @@ Model {
 	  BlockType		  Scope
 	  Name			  "qj"
 	  SID			  "520"
-	  Ports			  [2]
-	  Position		  [1065, 552, 1135, 688]
+	  Ports			  [3]
+	  Position		  [1070, 551, 1135, 759]
 	  ZOrder		  700
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','qj_selected','DataLogging',true,'DataLoggingSaveFormat','Structur"
-	  "e'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','0.62395','MaxYLim"
-	  "Real','1.19919','YLabelReal','','MinYLimMag','0.62395','MaxYLimMag','1.19919','LegendVisibility','Off','XGrid',true"
-	  ",'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627"
-	  "4509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078"
-	  "431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294"
-	  "117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefined"
-	  "ChannelNames',{{}},'NumLines',2,'LineNames',{{'qjDesired','qjMeasured'}},'ShowContent',true,'Placement',1)},'Displa"
-	  "yPropertyDefaults',struct('MinYLimReal','0.62395','MaxYLimReal','1.19919','YLabelReal','','MinYLimMag','0.62395','M"
-	  "axYLimMag','1.19919','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'A"
-	  "xesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235294117"
-	  "64706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3921568"
-	  "62745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extm"
-	  "gr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018a'"
-	  ")),'Version','2018a','Position',[68 496 1853 468])"
-	  NumInputPorts		  "2"
+	  "e'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.10964','MaxYLi"
+	  "mReal','0.98678','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.98678','LegendVisibility','Off','XGrid',tru"
+	  "e,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862"
+	  "74509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607"
+	  "8431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529"
+	  "4117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefine"
+	  "dChannelNames',{{}},'NumLines',3,'LineNames',{{'qjDesired','qjMeasured','qjError'}},'ShowContent',true,'Placement',"
+	  "1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.10964','MaxYLimReal','0.98678','YLabelReal','','MinYLimMag',"
+	  "'0.00000','MaxYLimMag','0.98678','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor"
+	  "',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666"
+	  "667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608"
+	  " 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215"
+	  "6863],'Title','%<SignalLabel>')),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY'),extm"
+	  "gr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[68 491 1853 468])"
+	  NumInputPorts		  "3"
 	  Floating		  off
 	}
 	Block {
@@ -3212,24 +3313,25 @@ Model {
 	  Name			  "qjError"
 	  SID			  "572"
 	  Ports			  [1]
-	  Position		  [1065, 724, 1135, 866]
+	  Position		  [1065, 799, 1135, 941]
 	  ZOrder		  721
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'S"
-	  "erializedDisplays',{struct('MinYLimReal','-0.08374','MaxYLimReal','0.0849','YLabelReal','','MinYLimMag','0.00000','"
-	  "MaxYLimMag','0.0849','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'Ax"
-	  "esTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098"
-	  "039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039"
-	  "215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title'"
-	  ",'%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'qjError'}},"
-	  "'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.08374','MaxYLimReal','0.0849'"
-	  ",'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.0849','LegendVisibility','On','XGrid',true,'YGrid',true,'Pl"
-	  "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Colo"
-	  "rOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.71764"
-	  "7058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.07"
-	  "45098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY'),e"
-	  "xtmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[68 1 1853 968])"
+	  "erializedDisplays',{struct('MinYLimReal','-0.01992','MaxYLimReal','0.17929','YLabelReal','','MinYLimMag','0.00000',"
+	  "'MaxYLimMag','0.17929','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'"
+	  "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450"
+	  "98039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980"
+	  "39215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Titl"
+	  "e','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'qjError'}"
+	  "},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.01992','MaxYLimReal','0.179"
+	  "29','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.17929','LegendVisibility','On','XGrid',true,'YGrid',true"
+	  ",'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
+	  "ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7"
+	  "17647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 "
+	  "0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY"
+	  "'),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[68 1 1853 968"
+	  "])"
 	  NumInputPorts		  "1"
 	  Floating		  off
 	}
@@ -3239,8 +3341,18 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Selector5"
 	  SrcPort		  1
-	  DstBlock		  "qj"
-	  DstPort		  1
+	  Points		  [105, 0]
+	  Branch {
+	    ZOrder		    94
+	    Points		    [0, -48; 200, 0; 0, 158]
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    93
+	    DstBlock		    "qj"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  Name			  "currentDesired"
@@ -3248,12 +3360,12 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Selector2"
 	  SrcPort		  1
-	  Points		  [79, 0]
+	  Points		  [122, 0; 0, 0]
 	  Branch {
-	    ZOrder		    36
-	    Points		    [0, -47; 216, 0; 0, 37]
-	    DstBlock		    "Current1"
-	    DstPort		    1
+	    ZOrder		    107
+	    Points		    [0, 160]
+	    DstBlock		    "Mux"
+	    DstPort		    2
 	  }
 	  Branch {
 	    ZOrder		    35
@@ -3267,8 +3379,18 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Selector6"
 	  SrcPort		  1
-	  DstBlock		  "qj"
-	  DstPort		  2
+	  Points		  [107, 0]
+	  Branch {
+	    ZOrder		    96
+	    Points		    [0, 130; 241, 0; 0, -70]
+	    DstBlock		    "Mux1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    95
+	    DstBlock		    "qj"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  Name			  "currentMeasured"
@@ -3276,24 +3398,35 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Selector1"
 	  SrcPort		  1
-	  DstBlock		  "Current"
-	  DstPort		  2
+	  Points		  [92, 0]
+	  Branch {
+	    ZOrder		    106
+	    Points		    [0, 105]
+	    DstBlock		    "Mux"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    80
+	    Points		    [16, 0; 0, -20]
+	    DstBlock		    "Current"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  Name			  "tauDesired"
 	  ZOrder		  18
+	  Labels		  [-1, 0]
 	  SrcBlock		  "Selector3"
 	  SrcPort		  1
-	  Points		  [56, 0]
+	  Points		  [102, 0]
 	  Branch {
-	    ZOrder		    38
-	    Points		    [0, -59; 277, 0; 0, -101]
-	    DstBlock		    "Current1"
-	    DstPort		    2
+	    ZOrder		    90
+	    Points		    [0, 125]
+	    DstBlock		    "Mux2"
+	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    37
-	    Labels		    [1, 1]
 	    DstBlock		    "Tau"
 	    DstPort		    1
 	  }
@@ -3305,10 +3438,10 @@ Model {
 	  SrcPort		  1
 	  Points		  [54, 0]
 	  Branch {
-	    ZOrder		    51
-	    Points		    [0, 59; 298, 0; 0, -244]
-	    DstBlock		    "Current1"
-	    DstPort		    3
+	    ZOrder		    91
+	    Points		    [0, 75]
+	    DstBlock		    "Mux2"
+	    DstPort		    2
 	  }
 	  Branch {
 	    ZOrder		    50
@@ -3352,7 +3485,7 @@ Model {
 	  Points		  [275, 0]
 	  Branch {
 	    ZOrder		    60
-	    Points		    [0, 200]
+	    Points		    [0, 275]
 	    DstBlock		    "Sum"
 	    DstPort		    1
 	  }
@@ -3369,7 +3502,7 @@ Model {
 	  Points		  [233, 0]
 	  Branch {
 	    ZOrder		    62
-	    Points		    [0, 150]
+	    Points		    [0, 225]
 	    DstBlock		    "Sum"
 	    DstPort		    2
 	  }
@@ -3392,8 +3525,78 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Selector7"
 	  SrcPort		  1
-	  DstBlock		  "qjError"
+	  Points		  [96, 0]
+	  Branch {
+	    ZOrder		    68
+	    Points		    [0, -145]
+	    DstBlock		    "qj"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    67
+	    Points		    [22, 0]
+	    Branch {
+	      ZOrder		      116
+	      Points		      [0, 138; 485, 0; 0, -363]
+	      DstBlock		      "Current1"
+	      DstPort		      4
+	    }
+	    Branch {
+	      ZOrder		      115
+	      DstBlock		      "qjError"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  ZOrder		  111
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [176, 0; 0, 225]
+	  DstBlock		  "Current1"
 	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  112
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  Points		  [86, 0; 0, 60]
+	  DstBlock		  "Current1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  113
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [113, 0; 0, -95]
+	  DstBlock		  "Current1"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  109
+	  SrcBlock		  "GetMotorMeasurement1"
+	  SrcPort		  1
+	  DstBlock		  "Selector8"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PWM setpoint"
+	  ZOrder		  110
+	  SrcBlock		  "Selector8"
+	  SrcPort		  1
+	  Points		  [181, 0]
+	  Branch {
+	    ZOrder		    143
+	    Points		    [0, -60]
+	    DstBlock		    "Current"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    142
+	    Labels		    [1, 1]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
 	}
       }
     }
@@ -3419,7 +3622,7 @@ Model {
       RequestExecContextInheritance off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		29
+	$ObjectID		28
 	$ClassName		"Simulink.Mask"
 	Display			"disp('SYNCHRONIZER')"
       }
