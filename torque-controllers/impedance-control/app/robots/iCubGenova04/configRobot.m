@@ -98,7 +98,7 @@ MOVE_SELECTOR(JOINTS_TO_MOVE) = 1;
 % References for the demo movements
 if MOVING
     % Impedance gains
-    Kp     = 100*diag(MOVE_SELECTOR);
+    Kp     = 30*diag(MOVE_SELECTOR);
     Kd     = 1*sqrt(Kp);
     
     AMPLS  = 20.0*MOVE_SELECTOR;

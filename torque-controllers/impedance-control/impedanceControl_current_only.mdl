@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.405"
+    ComputedModelVersion    "1.423"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -16,7 +16,7 @@ Model {
     HasTerminateEvent	    0
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 6
+    NumExternalFileReferences 8
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/Utilities/Configuration"
       Path		      "impedanceControl_current_only/Configuration"
@@ -39,6 +39,18 @@ Model {
       Reference		      "WBToolboxLibrary/Actuators/SetMotorReferences"
       Path		      "impedanceControl_current_only/SetMotorReferences"
       SID		      "590"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "WBToolboxLibrary/Actuators/SetMotorReferences"
+      Path		      "impedanceControl_current_only/SetMotorReferences1"
+      SID		      "604"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Sources/Waveform\nGenerator"
+      Path		      "impedanceControl_current_only/Waveform Generator"
+      SID		      "615"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
@@ -109,9 +121,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1815.0, 876.0]
-	ZoomFactor		[1.0]
-	Offset			[51.578066037735653, -11.054245283018759]
+	Extents			[1815.0, 873.0]
+	ZoomFactor		[1.1968838526912182]
+	Offset			[-20.218934911242513, 31.302958579881704]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -131,7 +143,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAQQAAA5kAAABiAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAc9AAADqgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAc9AAADqAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANR/////wAAAAAAAAAA/"
@@ -145,9 +157,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "icub"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 14 10:40:40 2019"
-  RTWModifiedTimeStamp	  479729242
-  ModelVersionFormat	  "1.%<AutoIncrement:405>"
+  LastModifiedDate	  "Thu May 16 13:07:21 2019"
+  RTWModifiedTimeStamp	  479912423
+  ModelVersionFormat	  "1.%<AutoIncrement:423>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1101,6 +1113,21 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Scope
       DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
     }
@@ -1110,19 +1137,6 @@ Model {
       IndexMode		      "One-based"
       InputPortWidth	      "-1"
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Sin
-      SineType		      "Time based"
-      TimeSource	      "Use simulation time"
-      Amplitude		      "1"
-      Bias		      "0"
-      Frequency		      "1"
-      Phase		      "0"
-      Samples		      "10"
-      Offset		      "0"
-      SampleTime	      "-1"
-      VectorParams1D	      on
     }
     Block {
       BlockType		      SubSystem
@@ -1170,6 +1184,12 @@ Model {
       NumInputs		      "1"
       SampleTime	      "0"
     }
+    Block {
+      BlockType		      VariantSink
+      GeneratePreprocessorConditionals off
+      ShowConditionOnBlock    off
+      AllowZeroVariantControls off
+    }
   }
   System {
     Name		    "impedanceControl_current_only"
@@ -1188,9 +1208,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "120"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "613"
+    SIDHighWatermark	    "621"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -1210,9 +1230,17 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "603"
-      Position		      [480, 300, 510, 330]
+      Position		      [415, 370, 445, 400]
       ZOrder		      739
       Value		      "CONST_SETPOINT"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "619"
+      Position		      [415, 280, 445, 310]
+      ZOrder		      755
+      Value		      "MOVE_SELECTOR"
     }
     Block {
       BlockType		      Reference
@@ -1253,6 +1281,19 @@ Model {
       CurrentSetting	      "0"
     }
     Block {
+      BlockType		      Product
+      Name		      "Product"
+      SID		      "620"
+      Ports		      [2, 1]
+      Position		      [510, 182, 570, 258]
+      ZOrder		      756
+      Inputs		      "**"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Scope
       Name		      "Scope"
       SID		      "595"
@@ -1262,21 +1303,21 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-77.58827','MaxYLimReal','55.60569','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','77.58827','"
-      "LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
-      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
-      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
-      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
-      "Label>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefi"
-      "nedChannelNames',{{}},'NumLines',3,'LineNames',{{'desired PWM','measured current','motor position'}},'ShowConten"
-      "t',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-77.58827','MaxYLimReal','55.60569','YLa"
-      "belReal','','MinYLimMag','0.00000','MaxYLimMag','77.58827','LegendVisibility','On','XGrid',true,'YGrid',true,'Pl"
-      "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'C"
-      "olorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0"
-      ".717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1"
-      " 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutosc"
-      "ale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','20"
-      "18a','Position',[68 1 1853 970])"
+      "nYLimReal','-9.49627','MaxYLimReal','85.95639','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','85.95639','L"
+      "egendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862"
+      "74509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352"
+      "9411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764"
+      "7058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalL"
+      "abel>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefin"
+      "edChannelNames',{{'desired current','',''}},'NumLines',3,'LineNames',{{'desired current','measured current','mot"
+      "or position'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-9.49627','Max"
+      "YLimReal','85.95639','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','85.95639','LegendVisibility','On','XGr"
+      "id',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803"
+      "922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.074509803921"
+      "5686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigat"
+      "ion',true,'PreviousAutoscale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version"
+      "','2018a')),'Version','2018a','Position',[68 1 1843 968])"
       NumInputPorts	      "3"
       Floating		      off
     }
@@ -1294,7 +1335,7 @@ Model {
       OutputSizes	      "1"
       Port {
 	PortNumber		1
-	Name			"desired PWM"
+	Name			"desired current"
       }
     }
     Block {
@@ -1362,7 +1403,7 @@ Model {
       Name		      "SetMotorReferences"
       SID		      "590"
       Ports		      [1]
-      Position		      [985, 155, 1060, 205]
+      Position		      [1145, 190, 1220, 240]
       ZOrder		      720
       LibraryVersion	      "1.675"
       SourceBlock	      "WBToolboxLibrary/Actuators/SetMotorReferences"
@@ -1376,10 +1417,9 @@ Model {
       Name		      "SetMotorReferences1"
       SID		      "604"
       Ports		      [1]
-      Position		      [985, 235, 1060, 285]
+      Position		      [1145, 270, 1220, 320]
       ZOrder		      740
       BackgroundColor	      "[0.960000, 0.770000, 0.460000]"
-      Commented		      "on"
       LibraryVersion	      "1.675"
       SourceBlock	      "WBToolboxLibrary/Actuators/SetMotorReferences"
       SourceType	      "SetMotorReferences"
@@ -1416,15 +1456,38 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Sin
-      Name		      "setpoint 1"
-      SID		      "591"
+      BlockType		      VariantSink
+      Name		      "Variant Sink"
+      SID		      "614"
+      Ports		      [1, 2]
+      Position		      [915, 212, 1015, 308]
+      ZOrder		      750
+      VariantControls	      "DataTag0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Waveform\nGenerator"
+      SID		      "615"
       Ports		      [0, 1]
-      Position		      [480, 210, 590, 240]
-      ZOrder		      721
-      Amplitude		      "AMPLS_SETPOINT"
-      Frequency		      "FREQS_SETPOINT*2*pi"
-      SampleTime	      "0"
+      Position		      [415, 185, 445, 215]
+      ZOrder		      751
+      LibraryVersion	      "1.441"
+      SourceBlock	      "simulink/Sources/Waveform\nGenerator"
+      SourceType	      "WaveformGenerator"
+      SourceProductName	      "Simulink"
+      SourceProductBaseCode   "SL"
+      ContentPreviewEnabled   on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      SelectedSignal	      "1"
+      Signals		      "sin('Amplitude',AMPLS_SETPOINT_SCALAR,'Frequency',FREQS_SETPOINT_SCALAR*2*pi,'Phase',0)#square('"
+      "Amplitude',AMPLS_SETPOINT_SCALAR,'Frequency',FREQS_SETPOINT_SCALAR*2*pi,'Phase',0)"
+      BlockNames	      "MultiportSwitch_4a0ee91502aa426#MultiportSwitch_a7f91feaa1bb4b1"
+      SampleTime	      "Config.Ts"
     }
     Block {
       BlockType		      SubSystem
@@ -1637,7 +1700,7 @@ Model {
       }
     }
     Line {
-      Name		      "desired PWM"
+      Name		      "desired current"
       ZOrder		      704
       Labels		      [1, 1]
       SrcBlock		      "Selector1"
@@ -1682,10 +1745,10 @@ Model {
       }
     }
     Line {
-      ZOrder		      736
-      SrcBlock		      "setpoint 1"
+      ZOrder		      782
+      SrcBlock		      "Product"
       SrcPort		      1
-      Points		      [60, 0; 0, 25]
+      Points		      [70, 0; 0, 30]
       DstBlock		      "Manual Switch"
       DstPort		      1
     }
@@ -1693,7 +1756,7 @@ Model {
       ZOrder		      737
       SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [100, 0; 0, -45]
+      Points		      [165, 0; 0, -115]
       DstBlock		      "Manual Switch"
       DstPort		      2
     }
@@ -1703,15 +1766,14 @@ Model {
       SrcPort		      1
       Points		      [113, 0]
       Branch {
-	ZOrder			740
-	Points			[0, 145]
-	DstBlock		"Selector1"
+	ZOrder			765
+	DstBlock		"Variant Sink"
 	DstPort			1
       }
       Branch {
-	ZOrder			739
-	Points			[0, -80]
-	DstBlock		"SetMotorReferences"
+	ZOrder			764
+	Points			[0, 145]
+	DstBlock		"Selector1"
 	DstPort			1
       }
     }
@@ -1729,6 +1791,46 @@ Model {
       DstBlock		      "To Workspace"
       DstPort		      1
     }
+    Line {
+      ZOrder		      770
+      SrcBlock		      "Variant Sink"
+      SrcPort		      1
+      Points		      [55, 0; 0, -20]
+      DstBlock		      "SetMotorReferences"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      771
+      SrcBlock		      "Variant Sink"
+      SrcPort		      2
+      Points		      [55, 0; 0, 10]
+      DstBlock		      "SetMotorReferences1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      777
+      SrcBlock		      "Waveform\nGenerator"
+      SrcPort		      1
+      DstBlock		      "Product"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      779
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [15, 0; 0, -55]
+      DstBlock		      "Product"
+      DstPort		      2
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    N     8    (     0         %    \"     (    !     0         .    0     8    (    !     "
+    "     %    \"     $    )     0         0    \"0   %9A<FEA;G1?,0         .    0     8    (    !          %    \"    "
+    " $    )     0         0    \"0   %9A<FEA;G1?,@         "
   }
 }
 #Finite State Machines
