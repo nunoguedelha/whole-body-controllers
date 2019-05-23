@@ -6,6 +6,7 @@ ROBOT_DOF        = 1;
 % constants
 OUTPUT_PWM = 1;
 OUTPUT_CURRENT = 2;
+OUTPUT_TRQ = 3;
 
 % Robot configurations for WBT3.0
 WBTConfigRobot           = WBToolbox.Configuration;
@@ -27,12 +28,13 @@ ControlledJoints = {}; % used when CONTROL_BOARD_1_OR_JOINTS_0_SELECTOR==0
 % configuration
 JOINTS_TO_PLOT = [ 2 ]; % joint for which current tau and qj is plotted (desired and measured)
 JOINTS_TO_MOVE = [ 2 ]; % joints that are moved when MOVING==1
-CONTROLLER_OUTPUT = OUTPUT_CURRENT;
+CONTROLLER_OUTPUT = OUTPUT_TRQ;
 
 % map board to joints
 boardMap = {1:3, 4:7, 8:11, 12:17, 18:23};
 Variant_1 = Simulink.Variant; Variant_1.Condition = 'CONTROLLER_OUTPUT == OUTPUT_PWM';
 Variant_2 = Simulink.Variant; Variant_2.Condition = 'CONTROLLER_OUTPUT == OUTPUT_CURRENT';
+Variant_3 = Simulink.Variant; Variant_3.Condition = 'CONTROLLER_OUTPUT == OUTPUT_TRQ';
 
 indexControlledBoardNames = zeros(length(ControlledBoardNames),1);
 for i=1:length(ControlledBoardNames)
@@ -52,10 +54,12 @@ PLOT_SELECTOR(JOINTS_TO_PLOT) = 1;
 MOVE_SELECTOR = zeros(1, ROBOT_DOF);
 MOVE_SELECTOR(JOINTS_TO_MOVE) = 1;
 
-AMPLS_SETPOINT_SCALAR = 2;
+AMPLS_SETPOINT_SCALAR = 4;
 FREQS_SETPOINT_SCALAR = 0.1;
+OFFSET_SETPOINT_SCALAR = 4;
 
 AMPLS_SETPOINT = AMPLS_SETPOINT_SCALAR*MOVE_SELECTOR;
 FREQS_SETPOINT = FREQS_SETPOINT_SCALAR*MOVE_SELECTOR;
+OFFSET_SETPOINT = OFFSET_SETPOINT_SCALAR*MOVE_SELECTOR;
 
 CONST_SETPOINT = 3*MOVE_SELECTOR;
