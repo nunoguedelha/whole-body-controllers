@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.424"
+    ComputedModelVersion    "1.435"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -16,7 +16,7 @@ Model {
     HasTerminateEvent	    0
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 8
+    NumExternalFileReferences 6
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/Utilities/Configuration"
       Path		      "impedanceControl_current_only_R2017b/Configuration"
@@ -33,18 +33,6 @@ Model {
       Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
       Path		      "impedanceControl_current_only_R2017b/GetMotorMeasurement1"
       SID		      "602"
-      Type		      "LIBRARY_BLOCK"
-    }
-    ExternalFileReference {
-      Reference		      "WBToolboxLibrary/Actuators/SetMotorReferences"
-      Path		      "impedanceControl_current_only_R2017b/SetMotorReferences"
-      SID		      "590"
-      Type		      "LIBRARY_BLOCK"
-    }
-    ExternalFileReference {
-      Reference		      "WBToolboxLibrary/Actuators/SetMotorReferences"
-      Path		      "impedanceControl_current_only_R2017b/SetMotorReferences1"
-      SID		      "604"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
@@ -67,11 +55,11 @@ Model {
     }
     OrderedModelArguments   1
   }
-  DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 1 0"
   LogicAnalyzerGraphicalSettings ""
   LogicAnalyzerPlugin	  "on"
   LogicAnalyzerSignalOrdering ""
+  DiagnosticSuppressor	  "on"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 0 0"
   CustomCodeFunctionData  ""
   SLCCPlugin		  "on"
   ScopeRefreshTime	  0.035000
@@ -85,7 +73,7 @@ Model {
   MaxMDLFileLineLength	  120
   InitFcn		  "cd(fileparts(which(bdroot)));\ninitImpedanceControl_current_only;"
   StopFcn		  "cd(fileparts(which(bdroot)));\nstopImpedanceControl;"
-  LastSavedArchitecture	  "glnxa64"
+  LastSavedArchitecture	  "maci64"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    1
@@ -95,7 +83,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [67.0, 27.0, 1853.0, 1053.0]
+      Location		      [0.0, 23.0, 1440.0, 817.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -119,9 +107,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1815.0, 873.0]
-	ZoomFactor		[1.1968838526912182]
-	Offset			[-20.218934911242513, 31.302958579881704]
+	Extents			[1402.0, 641.0]
+	ZoomFactor		[1.0]
+	Offset			[126.33333333333428, 165.66666666666663]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -139,12 +127,12 @@ Model {
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAADmfwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAQQAAA5kAAABiAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAQQAAA5kAAABzAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAc9AAADqAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAWgAAACvAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANR/////wAAAAAAAAAA/"
+      "////wEAAACE/////wAAAAAAAAAA/////wEAAAD2/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAF6/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAOh/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
@@ -153,11 +141,11 @@ Model {
   Creator		  "daniele"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "icub"
+  LastModifiedBy	  "nunoguedelha"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu May 16 19:13:52 2019"
-  RTWModifiedTimeStamp	  479934832
-  ModelVersionFormat	  "1.%<AutoIncrement:424>"
+  LastModifiedDate	  "Wed May 29 21:01:03 2019"
+  RTWModifiedTimeStamp	  481064460
+  ModelVersionFormat	  "1.%<AutoIncrement:435>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -234,6 +222,7 @@ Model {
     $PropName		    "StreamingClients"
     $ObjectID		    9
     $ClassName		    "Simulink.HMI.StreamingClients"
+    Model		    "impedanceControl_current_only_R2017b"
     Array {
       Type		      "Struct"
       Dimension		      1
@@ -249,7 +238,7 @@ Model {
 	  Dimension		  0
 	  PropName		  "ModelPathSID_"
 	}
-	SourceModel_		""
+	SourceModel_		"impedanceControl_current_only_R2017b"
 	SignalUUID_		"256f30ef-8874-4b52-a483-67c9567cbde9"
 	ObserverType_		"dashboardblocks_observer"
 	Array {
@@ -909,6 +898,7 @@ Model {
 	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
 	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
 	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -973,7 +963,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      ""
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 396, 138, 1456, 890 ]
+      ConfigPrmDlgPosition    [ 310, 78, 1370, 830 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -1109,6 +1099,7 @@ Model {
     Block {
       BlockType		      Scope
       DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
     }
     Block {
       BlockType		      Selector
@@ -1143,7 +1134,6 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
-      Variant		      off
       GeneratePreprocessorConditionals off
       AllowZeroVariantControls off
       PropagateVariantConditions off
@@ -1172,8 +1162,8 @@ Model {
   }
   System {
     Name		    "impedanceControl_current_only_R2017b"
-    Location		    [67, 27, 1920, 1080]
-    Open		    off
+    Location		    [0, 23, 1440, 840]
+    Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1185,7 +1175,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "120"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "621"
     Block {
@@ -1202,12 +1192,6 @@ Model {
       ContentPreviewEnabled   off
       ConfigSource	      "Workspace"
       ConfigObject	      "'WBTConfigRobot'"
-      RobotName		      "'icubSim'"
-      UrdfFile		      "'model.urdf'"
-      ControlledJoints	      "{'l_elbow','l_shoulder_pitch','torso_roll'}"
-      ControlBoardsNames      "{'left_arm','right_arm','torso'}"
-      LocalName		      "'WBT'"
-      GravityVector	      "[0,0,-9.81]"
     }
     Block {
       BlockType		      Constant
@@ -1286,23 +1270,25 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-9.49627','MaxYLimReal','85.95639','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','85.95639','L"
-      "egendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862"
-      "74509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352"
-      "9411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764"
-      "7058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalL"
-      "abel>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefin"
-      "edChannelNames',{{'desired current','',''}},'NumLines',3,'LineNames',{{'desired current','measured current','mot"
-      "or position'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-9.49627','Max"
-      "YLimReal','85.95639','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','85.95639','LegendVisibility','On','XGr"
-      "id',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803"
-      "922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
-      ";1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.074509803921"
-      "5686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigat"
-      "ion',true,'PreviousAutoscale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version"
-      "','2018a')),'Version','2018a','Position',[68 1 1843 968])"
+      "nYLimReal','-1.25','MaxYLimReal','11.25','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','11.25','LegendVisi"
+      "bility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098039"
+      "22 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
+      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764705882352"
+      "9 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','L"
+      "inePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','off')}},'UserDefinedChann"
+      "elNames',{{'PWM setpoint','',''}},'NumLines',3,'LineNames',{{'PWM setpoint','measured current','motor position'}"
+      "},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.25','MaxYLimReal','11.25"
+      "','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','11.25','LegendVisibility','On','XGrid',true,'YGrid',true,"
+      "'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922]"
+      ",'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.066666666666666"
+      "7;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.058823529411764"
+      "7 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAut"
+      "oscale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurement"
+      "s',struct('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[0.25 0.75],'YCoordinates',[NaN NaN]"
+      ",'CursorChannels',[1 1],'WaveformCursors',false,'ShowHorizontal',true,'ShowVertical',true,'LockCursorSpacing',fa"
+      "lse,'SnapToData',false,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 51 14"
+      "40 754])"
       NumInputPorts	      "3"
-      Floating		      off
     }
     Block {
       BlockType		      Selector
@@ -1318,7 +1304,7 @@ Model {
       OutputSizes	      "1"
       Port {
 	PortNumber		1
-	Name			"desired current"
+	Name			"PWM setpoint"
       }
     }
     Block {
@@ -1388,6 +1374,7 @@ Model {
       Ports		      [1]
       Position		      [1145, 190, 1220, 240]
       ZOrder		      720
+      Commented		      "on"
       LibraryVersion	      "1.675"
       SourceBlock	      "WBToolboxLibrary/Actuators/SetMotorReferences"
       SourceType	      "SetMotorReferences"
@@ -1403,6 +1390,7 @@ Model {
       Position		      [1145, 270, 1220, 320]
       ZOrder		      740
       BackgroundColor	      "[0.960000, 0.770000, 0.460000]"
+      Commented		      "on"
       LibraryVersion	      "1.675"
       SourceBlock	      "WBToolboxLibrary/Actuators/SetMotorReferences"
       SourceType	      "SetMotorReferences"
@@ -1445,6 +1433,7 @@ Model {
       Ports		      [1, 2]
       Position		      [915, 212, 1015, 308]
       ZOrder		      750
+      Commented		      "on"
       VariantControls	      "DataTag0"
     }
     Block {
@@ -1454,7 +1443,7 @@ Model {
       Ports		      [0, 1]
       Position		      [415, 185, 445, 215]
       ZOrder		      751
-      LibraryVersion	      "1.441"
+      LibraryVersion	      "1.401"
       SourceBlock	      "simulink/Sources/Waveform\nGenerator"
       SourceType	      "WaveformGenerator"
       SourceProductName	      "Simulink"
@@ -1483,6 +1472,7 @@ Model {
       BackgroundColor	      "green"
       ShowName		      off
       RequestExecContextInheritance off
+      Variant		      off
       Object {
 	$PropName		"MaskObject"
 	$ObjectID		23
@@ -1513,6 +1503,7 @@ Model {
 	  Position		  [15, 15, 140, 75]
 	  ZOrder		  -7
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "GAZEBO_SYNCHRONIZER"
 	    Location		    [65, 24, 1366, 768]
@@ -1550,7 +1541,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Simulator Synchronizer"
 	      SourceType	      "Simulator Synchronizer"
 	      SourceProductName	      "WholeBodyToolbox"
-	      MultiThreadCoSim	      "auto"
 	      period		      "Config.Ts"
 	      serverPortName	      "'/clock/rpc'"
 	      clientPortName	      "'/WBT_synchronizer/rpc:o'"
@@ -1590,6 +1580,7 @@ Model {
 	  Position		  [-170, 12, -45, 72]
 	  ZOrder		  -9
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "REAL_TIME_SYNC"
 	    Location		    [65, 24, 1366, 768]
@@ -1628,7 +1619,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Real Time Synchronizer"
 	      SourceType	      "Real Time Synchronizer"
 	      SourceProductName	      "WholeBodyToolbox"
-	      MultiThreadCoSim	      "auto"
 	      period		      "Config.Ts"
 	    }
 	  }
@@ -1677,7 +1667,7 @@ Model {
       }
     }
     Line {
-      Name		      "desired current"
+      Name		      "PWM setpoint"
       ZOrder		      704
       Labels		      [1, 1]
       SrcBlock		      "Selector1"
@@ -1812,7 +1802,7 @@ MatData {
 }
 #Finite State Machines
 #
-#   Stateflow 80000014
+#   Stateflow 80000012
 #
 #
 Stateflow {
