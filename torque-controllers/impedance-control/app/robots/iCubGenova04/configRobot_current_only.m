@@ -6,6 +6,8 @@ ROBOT_DOF        = 1;
 % constants
 OUTPUT_PWM = 1;
 OUTPUT_CURRENT = 2;
+ELEC_TO_ROTOR_PHASE = 1/6; % 12 pole motor
+CURRENT_IN_MILLI_AMPS = 1000;
 
 % Robot configurations for WBT3.0
 WBTConfigRobot           = WBToolbox.Configuration;
