@@ -3,15 +3,6 @@ clear variables
 % joints = {'l_hip_pitch','l_hip_roll','l_hip_yaw','l_knee','l_ankle_pitch','l_ankle_roll'};
 joints = {'r_knee'};
 
-% Power conservative Clark transform
-phaseDelta1 = -0.4*pi/180*6;
-phaseDelta2 = 2.4*pi/180*6;
-ClarkT = 2*sqrt(1/3)*[
-    1 cos(-2*pi/3+phaseDelta1) cos(-4*pi/3+phaseDelta2)
-    0 sin(-2*pi/3+phaseDelta1) sin(-4*pi/3+phaseDelta2)
-    1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
-    ];
-
 % For each figure
 for figIdx=1
     % Get the data
@@ -62,26 +53,46 @@ for figIdx=1
         'motor position (deg)','phase current (mA)',...
         'Ic meas',[]);
     
-    % Compute expected Iq
+    % Compute expected Iq and adjust the "reading axes" to obbtain a constant Iq
     
-    % Rotation
-    matElem = zeros(1,1,length(pos));
-    [theta,vec0, vec1] = deal(matElem);
-    theta(1,1,:) = pos/180*pi*6; % elec phase = 6 * motor position
-    vec0(1,1,:) = 0;
-    vec1(1,1,:) = 1;
-    R = [
-        cos(theta) -sin(theta) vec0
-        sin(theta)  cos(theta) vec0
-        vec0        vec0       vec1
-        ];
-    expIq = zeros(size(pos));
+    % Pre-compute all the Clark Park Trans. for the defined rotor positions
+    CPT = ClarkParkTransform(pos);
     
-    for idx = 1:length(pos)
-        qIaqIbqIc = [qIa(idx) qIb(idx) qIc(idx)]';
-        expIdIqI0 = R(:,:,idx)*ClarkT*qIaqIbqIc;
-        expIq(idx) = expIdIqI0(2);
+    dPhi0 = zeros(2,1); % Elec Phase Shift
+    optimCtx = ClarkParkOptim(CPT,qIa,qIb,qIc);
+    
+    % Use an optimization approach to find the phase shifts that result in a constant Iq
+    [optimFunction,options] = ClarkParkOptim.getOptimConfig();
+    
+    % optimize
+    %
+    % Important note:
+    % - dPhi0 is the init vector for the optimization
+    % - dPhi is the main optimization variable (format set by dPhi0)
+    %
+    funcProps = functions(optimFunction);
+    funcName = funcProps.function;
+    switch funcName
+        case 'lsqnonlin'
+            [dPhiOpt, resnorm, ~, exitflag, output, ~] ...
+                = optimFunction(@(dPhi) optimCtx.costFunction1(dPhi), ...
+                dPhi0, [], [], options);
+        otherwise
+            % We are not computing optimalDq, but just using a previous
+            % result for a performance evaluation
+            error('Solver not supported !');
     end
+    
+    dPhiOpt
+    resnorm
+    exitflag
+    output
+    
+    motShift = CPT.elec2rotorPhase(dPhiOpt,6)*180/pi;
+    display(motShift);
+    
+    % Re-compute Ic with the optimized values
+    expIq = CPT.phase2dirquad(dPhiOpt(1),dPhiOpt(2),optimCtx.i1i2i3);
     
     % Plot expected Iq
     Plotter.plot2dDataNfittedModel(...

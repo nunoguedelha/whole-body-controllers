@@ -6,6 +6,7 @@ classdef ClarkParkTransform < handle
         pos@double;
         clarkT@function_handle;
         parkR@double;
+        elec2rotorPhase@function_handle = @(phase,nbPP) phase/nbPP;
     end
     
     methods
