@@ -34,12 +34,12 @@ classdef ClarkParkTransform < handle
                 ];
         end
         
-        function Iq = phase2dirquad(obj,dPhiAxis2,dPhiAxis3,i1i2i3)
+        function Eq = phase2dirquad(obj,dPhiAxis2,dPhiAxis3,e1e2e3)
             %clarkParkT Computes the full Clark-Park Trans.
-            Iq = zeros(size(obj.pos));
+            Eq = zeros(size(obj.pos));
             for idx = 1:length(obj.pos)
-                IdIqI0 = obj.parkR(:,:,idx)*obj.clarkT(dPhiAxis2,dPhiAxis3)*i1i2i3(:,idx);
-                Iq(idx) = IdIqI0(2);
+                EdEqE0 = obj.parkR(:,:,idx)*obj.clarkT(dPhiAxis2,dPhiAxis3)*e1e2e3(:,idx);
+                Eq(idx) = EdEqE0(2);
             end
         end
     end

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.519"
+    ComputedModelVersion    "1.522"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -149,9 +149,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nunoguedelha"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 28 15:57:08 2019"
-  RTWModifiedTimeStamp	  483633573
-  ModelVersionFormat	  "1.%<AutoIncrement:519>"
+  LastModifiedDate	  "Fri Jun 28 16:15:50 2019"
+  RTWModifiedTimeStamp	  483639347
+  ModelVersionFormat	  "1.%<AutoIncrement:522>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1259,6 +1259,12 @@ Model {
       ContentPreviewEnabled   off
       ConfigSource	      "Workspace"
       ConfigObject	      "'WBTConfigRobot'"
+      RobotName		      "'icubSim'"
+      UrdfFile		      "'model.urdf'"
+      ControlledJoints	      "{'l_elbow','l_shoulder_pitch','torso_roll'}"
+      ControlBoardsNames      "{'left_arm','right_arm','torso'}"
+      LocalName		      "'WBT'"
+      GravityVector	      "[0,0,-9.81]"
     }
     Block {
       BlockType		      Constant
@@ -1331,21 +1337,6 @@ Model {
       SourceProductName	      "WholeBodyToolbox"
       ContentPreviewEnabled   on
       measuredType	      "Motor Velocity"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "GetMotorMeasurement3"
-      SID		      "631"
-      Ports		      [0, 1]
-      Position		      [170, 543, 265, 577]
-      ZOrder		      766
-      Commented		      "on"
-      LibraryVersion	      "1.675"
-      SourceBlock	      "WBToolboxLibrary/States/GetMotorMeasurement"
-      SourceType	      "GetMeasurement"
-      SourceProductName	      "WholeBodyToolbox"
-      ContentPreviewEnabled   on
-      measuredType	      "Motor PWM"
     }
     Block {
       BlockType		      SubSystem
@@ -1646,52 +1637,26 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-1185.75','MaxYLimReal','1721.75','YLabelReal','','MinYLimMag','  0.00000','MaxYLimMag','1721.75','L"
-      "egendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862"
-      "74509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352"
-      "9411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764"
-      "7058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalL"
-      "abel>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','on'),struct('Vis"
-      "ible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','','','',''}},'Num"
-      "Lines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qIa','qIb','qIc'}},'ShowContent',true"
-      ",'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1185.75','MaxYLimReal','1721.75','YLabelReal',"
-      "'','MinYLimMag','  0.00000','MaxYLimMag','1721.75','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPha"
-      "se',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrde"
-      "r',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7176470"
-      "58823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0"
-      "745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY"
-      "','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurements',struct('"
-      "traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[0.25 0.75],'YCoordinates',[NaN NaN],'CursorCha"
-      "nnels',[1 1],'WaveformCursors',false,'ShowHorizontal',true,'ShowVertical',false,'LockCursorSpacing',false,'SnapT"
-      "oData',false,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 85 1440 674])"
+      "nYLimReal','-60.35418','MaxYLimReal','73.18766','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','73.18766','"
+      "LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
+      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
+      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
+      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
+      "Label>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','off'),struct('V"
+      "isible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','','','',''}},'N"
+      "umLines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qIa','qIb','qIc'}},'ShowContent',tr"
+      "ue,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-60.35418','MaxYLimReal','73.18766','YLabelRe"
+      "al','','MinYLimMag','0.00000','MaxYLimMag','73.18766','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMag"
+      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
+      "rder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7176"
+      "47058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 "
+      "0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale',"
+      "'XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurements',struc"
+      "t('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[0.25 0.75],'YCoordinates',[NaN NaN],'Cursor"
+      "Channels',[1 1],'WaveformCursors',false,'ShowHorizontal',true,'ShowVertical',false,'LockCursorSpacing',false,'Sn"
+      "apToData',false,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 85 1440 674]"
+      ")"
       NumInputPorts	      "6"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "632"
-      Ports		      [1]
-      Position		      [320, 544, 350, 576]
-      ZOrder		      767
-      Commented		      "on"
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-120.00000','MaxYLimReal','120.00000','YLabelReal','','MinYLi"
-      "mMag',' 0.00000','MaxYLimMag','120.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',fals"
-      "e,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 "
-      "0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098"
-      " 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803"
-      "9215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'N"
-      "umLines',1,'LineNames',{{'GetMotorMeasurement3'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',s"
-      "truct('MinYLimReal','-120.00000','MaxYLimReal','120.00000','YLabelReal','','MinYLimMag',' 0.00000','MaxYLimMag',"
-      "'120.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTic"
-      "kColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235294117647"
-      "06 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3921568"
-      "62745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),e"
-      "xtmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measu"
-      "rements',true,'Version','2017b')),'Version','2017b','Position',[7 157 560 420])"
-      NumInputPorts	      "1"
     }
     Block {
       BlockType		      Selector
@@ -2241,13 +2206,6 @@ Model {
       SrcBlock		      "To Milli Amps"
       SrcPort		      1
       DstBlock		      "Selector2"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      828
-      SrcBlock		      "GetMotorMeasurement3"
-      SrcPort		      1
-      DstBlock		      "Scope1"
       DstPort		      1
     }
   }
