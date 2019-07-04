@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.523"
+    ComputedModelVersion    "1.527"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -120,8 +120,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1402.0, 647.0]
-	ZoomFactor		[1.1295620437956204]
-	Offset			[74.405492730209971, 169.60581583198706]
+	ZoomFactor		[0.8]
+	Offset			[-106.85841218555265, 33.93595661204705]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -155,9 +155,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nunoguedelha"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 28 16:16:58 2019"
-  RTWModifiedTimeStamp	  483639385
-  ModelVersionFormat	  "1.%<AutoIncrement:523>"
+  LastModifiedDate	  "Thu Jul 04 03:14:35 2019"
+  RTWModifiedTimeStamp	  484110620
+  ModelVersionFormat	  "1.%<AutoIncrement:527>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1248,7 +1248,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "113"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "632"
     Block {
@@ -1651,25 +1651,25 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-60.35418','MaxYLimReal','73.18766','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','73.18766','"
-      "LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
-      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
-      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
-      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
-      "Label>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','off'),struct('V"
-      "isible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','','','',''}},'N"
-      "umLines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qIa','qIb','qIc'}},'ShowContent',tr"
-      "ue,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-60.35418','MaxYLimReal','73.18766','YLabelRe"
-      "al','','MinYLimMag','0.00000','MaxYLimMag','73.18766','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMag"
-      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
-      "rder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7176"
-      "47058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 "
-      "0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale',"
-      "'XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurements',struc"
-      "t('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[0.25 0.75],'YCoordinates',[NaN NaN],'Cursor"
-      "Channels',[1 1],'WaveformCursors',false,'ShowHorizontal',true,'ShowVertical',false,'LockCursorSpacing',false,'Sn"
-      "apToData',false,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 85 1440 674]"
-      ")"
+      "nYLimReal','-34320.00000','MaxYLimReal','37510.00000','YLabelReal','','MinYLimMag','   0.00000','MaxYLimMag','37"
+      "510.00000','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickC"
+      "olor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980392"
+      "15686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
+      "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Titl"
+      "e','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','on'"
+      "),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','',''"
+      ",'',''}},'NumLines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qV1','qV2','qV3'}},'Show"
+      "Content',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-34320.00000','MaxYLimReal','37510"
+      ".00000','YLabelReal','','MinYLimMag','   0.00000','MaxYLimMag','37510.00000','LegendVisibility','On','XGrid',tru"
+      "e,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6"
+      "86274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0."
+      "0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0."
+      "0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',tr"
+      "ue,'PreviousAutoscale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017"
+      "b','Measurements',struct('traceselector',struct('Line',4),'tcursors',struct('XCoordinates',[8.68 0.1644320328724"
+      "47],'YCoordinates',[-3190 0],'CursorChannels',[4 6],'WaveformCursors',1,'ShowHorizontal',false,'ShowVertical',tr"
+      "ue,'LockCursorSpacing',0,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','P"
+      "osition',[1 85 1440 674])"
       NumInputPorts	      "6"
     }
     Block {
@@ -1746,7 +1746,7 @@ Model {
       OutputSizes	      "1"
       Port {
 	PortNumber		1
-	Name			"qIa"
+	Name			"qV1"
       }
     }
     Block {
@@ -1763,7 +1763,7 @@ Model {
       OutputSizes	      "1"
       Port {
 	PortNumber		1
-	Name			"qIb"
+	Name			"qV2"
       }
     }
     Block {
@@ -1780,7 +1780,7 @@ Model {
       OutputSizes	      "1"
       Port {
 	PortNumber		1
-	Name			"qIc"
+	Name			"qV3"
       }
     }
     Block {
@@ -1833,10 +1833,11 @@ Model {
     }
     Block {
       BlockType		      Gain
-      Name		      "To Milli Amps"
+      Name		      "To PWM duty cycle"
       SID		      "630"
       Position		      [735, 450, 765, 480]
       ZOrder		      765
+      Gain		      "CURRENT_IN_MILLI_AMPS"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -2102,7 +2103,7 @@ Model {
       ZOrder		      731
       SrcBlock		      "GetMotorMeasurement1"
       SrcPort		      1
-      DstBlock		      "To Milli Amps"
+      DstBlock		      "To PWM duty cycle"
       DstPort		      1
     }
     Line {
@@ -2170,7 +2171,7 @@ Model {
       DstPort		      2
     }
     Line {
-      Name		      "qIa"
+      Name		      "qV1"
       ZOrder		      795
       Labels		      [1, 1]
       SrcBlock		      "Selector5"
@@ -2179,7 +2180,7 @@ Model {
       DstPort		      4
     }
     Line {
-      Name		      "qIb"
+      Name		      "qV2"
       ZOrder		      798
       Labels		      [1, 1]
       SrcBlock		      "Selector6"
@@ -2225,7 +2226,7 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "qIc"
+      Name		      "qV3"
       ZOrder		      814
       Labels		      [1, 1]
       SrcBlock		      "Selector7"
@@ -2242,7 +2243,7 @@ Model {
     }
     Line {
       ZOrder		      816
-      SrcBlock		      "To Milli Amps"
+      SrcBlock		      "To PWM duty cycle"
       SrcPort		      1
       DstBlock		      "Selector2"
       DstPort		      1
@@ -2288,9 +2289,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

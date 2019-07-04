@@ -31,7 +31,13 @@ for figIdx=1
     qIa = y(3,:); %+24.32;
     pos = y(4,:); % mod(y(2,:)*180/pi,360);
     measIq = y(5,:);
+    clear t; clear y;
     
+    % Prepare figure handler
+    figuresHandler = DiagPlotFiguresHandler('figs');
+    
+    
+if 0
     % Compute averaged samples
     clusterSize = 10;
     posClusters = (0:60*clusterSize)/clusterSize;
@@ -82,9 +88,6 @@ for figIdx=1
     % Pre-compute all the Clark Park Trans. for the defined rotor positions
     CPT = ClarkParkTransform(pos);
     
-    % Prepare figure handler
-    figuresHandler = DiagPlotFiguresHandler('figs');
-    
     % Compute expected Iq without any compensation
     expIq = CPT.phase2dirquad(0,0,[qIa;qIb;qIc]);
     
@@ -105,7 +108,7 @@ for figIdx=1
         'Iq exp',[]);
     
     Plotter.plot2dDataNfittedModel(...
-        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected quadrature Current = f(Position)'],['motorExpIq2pos-Fig-OffsetComp' num2str(figIdx)],...
+        figuresHandler,[],['motorExpIq2pos-Fig-OffsetComp' num2str(figIdx)],...
         pos,expIqOffComp,[],[],...
         [],[],...
         'Iq exp offset compensation.',[]);
@@ -127,9 +130,9 @@ for figIdx=1
         'Iq exp',[]);
     
     Plotter.plot2dDataNfittedModel(...
-        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected quadrature Current = f(Position)'],['motorExpIq2pos-Fig-PhaseComp' num2str(figIdx)],...
+        figuresHandler,[],['motorExpIq2pos-Fig-PhaseComp' num2str(figIdx)],...
         pos,expIqPhaseShiftComp,[],[],...
-        'motor position (deg)','quadrature current (mA)',...
+        [],[],...
         'Iq exp phase shift compensation',[]);
     
     % Compensate both offsets and phase shift errors.
@@ -148,47 +151,65 @@ for figIdx=1
         'Iq exp',[]);
     
     Plotter.plot2dDataNfittedModel(...
-        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected quadrature Current = f(Position)'],['motorExpIq2pos-Fig-OffsetPhaseComp' num2str(figIdx)],...
+        figuresHandler,[],['motorExpIq2pos-Fig-OffsetPhaseComp' num2str(figIdx)],...
         pos,expIqPhaseOffShiftComp,[],[],...
-        'motor position (deg)','quadrature current (mA)',...
+        [],[],...
         'Iq exp offset and phase shift compensation',[]);
     
-    clear t; clear y;
+end
+    %% Emulate algorithm in 2FOC code
+    
+    Id = zeros(size(pos));
+    Iq = zeros(size(pos));
+    
+    for idx = 1:numel(pos)
+        focEmul = FOCemulator();
+        focEmul.updateState(round(pos(idx)*6));
+        [Id(idx),Iq(idx)] = focEmul.computeIqId(qIa(idx),qIc(idx));
+    end
+    
+    % Plot emulated Iq
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : 2FOC emulated quadrature Current = f(Position)'],['motor2focIq2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Iq,[],[],...
+        'motor position (deg)','quadrature current (mA)',...
+        'Iq 2FOC',[]);
+    
 end
 
 %% Converting the cos, sin tables in the 2FOC code
 
-% Original tables
-cos_table = [32767,32763,32748,32723,32688,32643,32588,32523,32449,32364,32270,32165,32051,31928,31794,31651,31498,31336,31164,30982,30791,30591,30381,30163,29935,29697,29451,29196,28932,28659,28377];
-sin_table = [    0,  330,  660,  990, 1319, 1648, 1977, 2305, 2632, 2959, 3285, 3609, 3933, 4255, 4576, 4896, 5214, 5531, 5846, 6159, 6470, 6779, 7087, 7392, 7694, 7995, 8293, 8588, 8881, 9171, 9459];
-
-% computed tables
-cos_tbl = round(cos((0:1:30)/180*pi)*32767);
-sin_tbl = round(sin((0:1:30)/180*pi)*32767/sqrt(3));
-
-% Identified phase shift errors
-dPhi = [0.0324 0.3422];
-
-% Since the Clark-Park transform is:
-% clarkT = @(dPhi1,dPhi2) sqrt(2/3)*[
-%     1 cos(-2*pi/3+dPhi1) cos(-4*pi/3+dPhi2)
-%     0 sin(-2*pi/3+dPhi1) sin(-4*pi/3+dPhi2)
+% % Original tables
+% cos_table = [32767,32763,32748,32723,32688,32643,32588,32523,32449,32364,32270,32165,32051,31928,31794,31651,31498,31336,31164,30982,30791,30591,30381,30163,29935,29697,29451,29196,28932,28659,28377];
+% sin_table = [    0,  330,  660,  990, 1319, 1648, 1977, 2305, 2632, 2959, 3285, 3609, 3933, 4255, 4576, 4896, 5214, 5531, 5846, 6159, 6470, 6779, 7087, 7392, 7694, 7995, 8293, 8588, 8881, 9171, 9459];
+% 
+% % computed tables
+% cos_tbl = round(cos((0:1:30)/180*pi)*32767);
+% sin_tbl = round(sin((0:1:30)/180*pi)*32767/sqrt(3));
+% 
+% % Identified phase shift errors
+% dPhi = [0.0324 0.3422];
+% 
+% % Since the Clark-Park transform is:
+% % clarkT = @(dPhi1,dPhi2) sqrt(2/3)*[
+% %     1 cos(-2*pi/3+dPhi1) cos(-4*pi/3+dPhi2)
+% %     0 sin(-2*pi/3+dPhi1) sin(-4*pi/3+dPhi2)
+% %     1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
+% %     ];
+% % 
+% % We have to substract the identified dPhi from the cos/sin arguments in the tables
+% 
+% % converted tables
+% cos_table_dphi1 = round(cos((0:1:30)/180*pi-dPhi(1))*32767);
+% sin_table_dphi1 = round(sin((0:1:30)/180*pi-dPhi(1))*32767/sqrt(3));
+% 
+% cos_table_dphi2 = round(cos((0:1:30)/180*pi-dPhi(2))*32767);
+% sin_table_dphi2 = round(sin((0:1:30)/180*pi-dPhi(2))*32767/sqrt(3));
+% 
+% clarkT = @(dPhiAxis2,dPhiAxis3) sqrt(2/3)*[
+%     1 cos(-2*pi/3+dPhiAxis2) cos(-4*pi/3+dPhiAxis3)
+%     0 sin(-2*pi/3+dPhiAxis2) sin(-4*pi/3+dPhiAxis3)
 %     1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
 %     ];
 % 
-% We have to substract the identified dPhi from the cos/sin arguments in the tables
-
-% converted tables
-cos_table_dphi1 = round(cos((0:1:30)/180*pi-dPhi(1))*32767);
-sin_table_dphi1 = round(sin((0:1:30)/180*pi-dPhi(1))*32767/sqrt(3));
-
-cos_table_dphi2 = round(cos((0:1:30)/180*pi-dPhi(2))*32767);
-sin_table_dphi2 = round(sin((0:1:30)/180*pi-dPhi(2))*32767/sqrt(3));
-
-clarkT = @(dPhiAxis2,dPhiAxis3) sqrt(2/3)*[
-    1 cos(-2*pi/3+dPhiAxis2) cos(-4*pi/3+dPhiAxis3)
-    0 sin(-2*pi/3+dPhiAxis2) sin(-4*pi/3+dPhiAxis3)
-    1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
-    ];
-
-clarkTcorr = clarkT(dPhi(1),dPhi(2))./clarkT(0,0);
+% clarkTcorr = clarkT(dPhi(1),dPhi(2))./clarkT(0,0);

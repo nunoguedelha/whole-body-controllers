@@ -31,7 +31,13 @@ for figIdx=1
     qV1 = y(3,:); %+24.32;
     pos = y(4,:); % mod(y(2,:)*180/pi,360);
     measVq = y(5,:);
+    clear t; clear y;
     
+    % Prepare figure handler
+    figuresHandler = DiagPlotFiguresHandler('figs');
+    
+    
+if 0
     % Compute averaged samples
     clusterSize = 10;
     posClusters = (0:60*clusterSize)/clusterSize;
@@ -82,9 +88,6 @@ for figIdx=1
     % Pre-compute all the Clark Park Trans. for the defined rotor positions
     CPT = ClarkParkTransform(pos);
     
-    % Prepare figure handler
-    figuresHandler = DiagPlotFiguresHandler('figs');
-    
     % Compute expected Vq without any compensation
     expVq = CPT.phase2dirquad(0,0,[qV1;qV2;qV3]);
     
@@ -105,7 +108,7 @@ for figIdx=1
         'Vq exp',[]);
     
     Plotter.plot2dDataNfittedModel(...
-        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected quadrature PWM = f(Position)'],['motorExpVq2pos-Fig-OffsetComp' num2str(figIdx)],...
+        figuresHandler,[],['motorExpVq2pos-Fig-OffsetComp' num2str(figIdx)],...
         pos,expVqOffComp,[],[],...
         [],[],...
         'Vq exp offset compensation.',[]);
@@ -127,9 +130,9 @@ for figIdx=1
         'Vq exp',[]);
     
     Plotter.plot2dDataNfittedModel(...
-        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected quadrature PWM = f(Position)'],['motorExpVq2pos-Fig-PhaseComp' num2str(figIdx)],...
+        figuresHandler,[],['motorExpVq2pos-Fig-PhaseComp' num2str(figIdx)],...
         pos,expVqPhaseShiftComp,[],[],...
-        'motor position (deg)','quadrature PWM (dutycycle)',...
+        [],[],...
         'Vq exp phase shift compensation',[]);
     
     % Compensate both offsets and phase shift errors.
@@ -148,47 +151,104 @@ for figIdx=1
         'Vq exp',[]);
     
     Plotter.plot2dDataNfittedModel(...
-        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected quadrature PWM = f(Position)'],['motorExpVq2pos-Fig-OffsetPhaseComp' num2str(figIdx)],...
+        figuresHandler,[],['motorExpVq2pos-Fig-OffsetPhaseComp' num2str(figIdx)],...
         pos,expVqPhaseOffShiftComp,[],[],...
-        'motor position (deg)','quadrature PWM (dutycycle)',...
+        [],[],...
         'Vq exp offset and phase shift compensation',[]);
     
-    clear t; clear y;
+end
+    %% Emulate algorithm in 2FOC code
+    
+    [Va,Vb,Vc,Vd,Vq] = deal(zeros(size(pos)));
+    Vdexp = repmat(40,size(pos)); % percent
+    Vqexp = repmat(100,size(pos)); % percent
+    
+    for idx = 1:numel(pos)
+        focEmul = FOCemulator();
+        focEmul.updateState(round(pos(idx)*6));
+        [Va(idx),Vb(idx),Vc(idx)] = focEmul.computePWMabc(Vdexp(idx),Vqexp(idx));
+        [Vd(idx),Vq(idx)] = focEmul.computeIqId(Va(idx),Vc(idx));
+    end
+    
+    % Plot emulated Va, Vb, Vc
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : 2FOC emulated Phase PWM voltages = f(Position)'],['motor2focVabc2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Va,[],[],...
+        'motor position (deg)','phase voltage PWM (dutycycle)',...
+        'Va 2FOC',[]);
+    
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[],['motor2focVabc2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Vb,[],[],...
+        [],[],...
+        'Vb 2FOC',[]);
+    
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[],['motor2focVabc2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Vc,[],[],...
+        [],[],...
+        'Vc 2FOC',[]);
+    
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[System.toLatexInterpreterCompliant(joints{figIdx}) ' : expected d-q PWM = f(Position)'],['motor2focVdq2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Vdexp,[],[],...
+        'motor position (deg)','phase voltage PWM (dutycycle)',...
+        'Vd expected',[]);
+    
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[],['motor2focVdq2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Vqexp,[],[],...
+        [],[],...
+        'Vq expected',[]);
+    
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[],['motor2focVdq2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Vd/10,[],[],...
+        [],[],...
+        'Vd 2FOC',[]);
+    
+    Plotter.plot2dDataNfittedModel(...
+        figuresHandler,[],['motor2focVdq2pos-Fig-2FOCemul' num2str(figIdx)],...
+        pos,Vq/10,[],[],...
+        [],[],...
+        'Vq 2FOC',[]);
 end
 
 %% Converting the cos, sin tables in the 2FOC code
 
-% Original tables
-cos_table = [32767,32763,32748,32723,32688,32643,32588,32523,32449,32364,32270,32165,32051,31928,31794,31651,31498,31336,31164,30982,30791,30591,30381,30163,29935,29697,29451,29196,28932,28659,28377];
-sin_table = [    0,  330,  660,  990, 1319, 1648, 1977, 2305, 2632, 2959, 3285, 3609, 3933, 4255, 4576, 4896, 5214, 5531, 5846, 6159, 6470, 6779, 7087, 7392, 7694, 7995, 8293, 8588, 8881, 9171, 9459];
-
-% computed tables
-cos_tbl = round(cos((0:1:30)/180*pi)*32767);
-sin_tbl = round(sin((0:1:30)/180*pi)*32767/sqrt(3));
-
-% Identified phase shift errors
-dPhi = [0.0324 0.3422];
-
-% Since the Clark-Park transform is:
-% clarkT = @(dPhi1,dPhi2) sqrt(2/3)*[
-%     1 cos(-2*pi/3+dPhi1) cos(-4*pi/3+dPhi2)
-%     0 sin(-2*pi/3+dPhi1) sin(-4*pi/3+dPhi2)
+% % Original tables
+% cos_table = [32767,32763,32748,32723,32688,32643,32588,32523,32449,32364,32270,32165,32051,31928,31794,31651,31498,31336,31164,30982,30791,30591,30381,30163,29935,29697,29451,29196,28932,28659,28377];
+% sin_table = [    0,  330,  660,  990, 1319, 1648, 1977, 2305, 2632, 2959, 3285, 3609, 3933, 4255, 4576, 4896, 5214, 5531, 5846, 6159, 6470, 6779, 7087, 7392, 7694, 7995, 8293, 8588, 8881, 9171, 9459];
+% 
+% % computed tables
+% cos_tbl = round(cos((0:1:30)/180*pi)*32767);
+% sin_tbl = round(sin((0:1:30)/180*pi)*32767/sqrt(3));
+% 
+% % Identified phase shift errors
+% dPhi = [0.0324 0.3422];
+% 
+% % Since the Clark-Park transform is:
+% % clarkT = @(dPhi1,dPhi2) sqrt(2/3)*[
+% %     1 cos(-2*pi/3+dPhi1) cos(-4*pi/3+dPhi2)
+% %     0 sin(-2*pi/3+dPhi1) sin(-4*pi/3+dPhi2)
+% %     1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
+% %     ];
+% % 
+% % We have to substract the identified dPhi from the cos/sin arguments in the tables
+% 
+% % converted tables
+% cos_table_dphi1 = round(cos((0:1:30)/180*pi-dPhi(1))*32767);
+% sin_table_dphi1 = round(sin((0:1:30)/180*pi-dPhi(1))*32767/sqrt(3));
+% 
+% cos_table_dphi2 = round(cos((0:1:30)/180*pi-dPhi(2))*32767);
+% sin_table_dphi2 = round(sin((0:1:30)/180*pi-dPhi(2))*32767/sqrt(3));
+% 
+% clarkT = @(dPhiAxis2,dPhiAxis3) sqrt(2/3)*[
+%     1 cos(-2*pi/3+dPhiAxis2) cos(-4*pi/3+dPhiAxis3)
+%     0 sin(-2*pi/3+dPhiAxis2) sin(-4*pi/3+dPhiAxis3)
 %     1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
 %     ];
 % 
-% We have to substract the identified dPhi from the cos/sin arguments in the tables
-
-% converted tables
-cos_table_dphi1 = round(cos((0:1:30)/180*pi-dPhi(1))*32767);
-sin_table_dphi1 = round(sin((0:1:30)/180*pi-dPhi(1))*32767/sqrt(3));
-
-cos_table_dphi2 = round(cos((0:1:30)/180*pi-dPhi(2))*32767);
-sin_table_dphi2 = round(sin((0:1:30)/180*pi-dPhi(2))*32767/sqrt(3));
-
-clarkT = @(dPhiAxis2,dPhiAxis3) sqrt(2/3)*[
-    1 cos(-2*pi/3+dPhiAxis2) cos(-4*pi/3+dPhiAxis3)
-    0 sin(-2*pi/3+dPhiAxis2) sin(-4*pi/3+dPhiAxis3)
-    1/sqrt(2) 1/sqrt(2) 1/sqrt(2)
-    ];
-
-clarkTcorr = clarkT(dPhi(1),dPhi(2))./clarkT(0,0);
+% clarkTcorr = clarkT(dPhi(1),dPhi(2))./clarkT(0,0);
+% 
+    
