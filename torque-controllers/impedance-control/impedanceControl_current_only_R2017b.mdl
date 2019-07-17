@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.522"
+    ComputedModelVersion    "1.543"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -16,7 +16,7 @@ Model {
     HasTerminateEvent	    0
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 7
+    NumExternalFileReferences 10
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/Utilities/Configuration"
       Path		      "impedanceControl_current_only_R2017b/Configuration"
@@ -25,20 +25,38 @@ Model {
     }
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
-      Path		      "impedanceControl_current_only_R2017b/GetMotorMeasurement"
+      Path		      "impedanceControl_current_only_R2017b/Motor State 2/GetMotorMeasurement"
       SID		      "607"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
-      Path		      "impedanceControl_current_only_R2017b/GetMotorMeasurement1"
+      Path		      "impedanceControl_current_only_R2017b/Motor State 2/GetMotorMeasurement1"
       SID		      "602"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
-      Path		      "impedanceControl_current_only_R2017b/GetMotorMeasurement2"
+      Path		      "impedanceControl_current_only_R2017b/Motor State 2/GetMotorMeasurement2"
       SID		      "622"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
+      Path		      "impedanceControl_current_only_R2017b/Motor State1/GetMotorMeasurement"
+      SID		      "652"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
+      Path		      "impedanceControl_current_only_R2017b/Motor State1/GetMotorMeasurement1"
+      SID		      "653"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "WBToolboxLibrary/States/GetMotorMeasurement"
+      Path		      "impedanceControl_current_only_R2017b/Motor State1/GetMotorMeasurement2"
+      SID		      "654"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
@@ -89,7 +107,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 23.0, 1440.0, 823.0]
+      Location		      [0.0, 23.0, 1440.0, 821.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -113,9 +131,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1402.0, 647.0]
-	ZoomFactor		[1.1295620437956204]
-	Offset			[74.405492730209971, 169.60581583198706]
+	Extents			[1402.0, 645.0]
+	ZoomFactor		[0.7206053550640279]
+	Offset			[-254.29321486268179, 162.5718901453958]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -135,7 +153,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAQQAAA5kAAABzAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAWgAAACwgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAWgAAACwAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACE/////wAAAAAAAAAA/////wEAAAD2/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAF6/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAOh/////wAAAAAAAAAA/"
@@ -149,9 +167,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nunoguedelha"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 28 16:15:50 2019"
-  RTWModifiedTimeStamp	  483639347
-  ModelVersionFormat	  "1.%<AutoIncrement:522>"
+  LastModifiedDate	  "Mon Jul 15 12:32:47 2019"
+  RTWModifiedTimeStamp	  485091615
+  ModelVersionFormat	  "1.%<AutoIncrement:543>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1229,7 +1247,7 @@ Model {
   }
   System {
     Name		    "impedanceControl_current_only_R2017b"
-    Location		    [0, 23, 1440, 846]
+    Location		    [0, 23, 1440, 844]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1242,9 +1260,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "113"
+    ZoomFactor		    "72"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "632"
+    SIDHighWatermark	    "664"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -1259,12 +1277,6 @@ Model {
       ContentPreviewEnabled   off
       ConfigSource	      "Workspace"
       ConfigObject	      "'WBTConfigRobot'"
-      RobotName		      "'icubSim'"
-      UrdfFile		      "'model.urdf'"
-      ControlledJoints	      "{'l_elbow','l_shoulder_pitch','torso_roll'}"
-      ControlBoardsNames      "{'left_arm','right_arm','torso'}"
-      LocalName		      "'WBT'"
-      GravityVector	      "[0,0,-9.81]"
     }
     Block {
       BlockType		      Constant
@@ -1283,336 +1295,660 @@ Model {
       Value		      "MOVE_SELECTOR"
     }
     Block {
-      BlockType		      Gain
-      Name		      "Elec To Rotor\nangle"
-      SID		      "628"
-      Position		      [735, 510, 765, 540]
-      ZOrder		      763
-      Gain		      "ELEC_TO_ROTOR_PHASE"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "GetMotorMeasurement"
-      SID		      "607"
-      Ports		      [0, 1]
-      Position		      [405, 628, 500, 662]
-      ZOrder		      743
-      BackgroundColor	      "[0.513700, 0.851000, 0.670600]"
-      LibraryVersion	      "1.675"
-      SourceBlock	      "WBToolboxLibrary/States/GetMotorMeasurement"
-      SourceType	      "GetMeasurement"
-      SourceProductName	      "WholeBodyToolbox"
-      ContentPreviewEnabled   on
-      measuredType	      "Motor Position"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "GetMotorMeasurement1"
-      SID		      "602"
-      Ports		      [0, 1]
-      Position		      [405, 448, 500, 482]
-      ZOrder		      737
-      BackgroundColor	      "[0.960000, 0.770000, 0.460000]"
-      LibraryVersion	      "1.675"
-      SourceBlock	      "WBToolboxLibrary/States/GetMotorMeasurement"
-      SourceType	      "GetMeasurement"
-      SourceProductName	      "WholeBodyToolbox"
-      ContentPreviewEnabled   on
-      measuredType	      "Motor Current"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "GetMotorMeasurement2"
-      SID		      "622"
-      Ports		      [0, 1]
-      Position		      [405, 508, 500, 542]
-      ZOrder		      757
-      BackgroundColor	      "[0.513700, 0.674500, 1.000000]"
-      LibraryVersion	      "1.675"
-      SourceBlock	      "WBToolboxLibrary/States/GetMotorMeasurement"
-      SourceType	      "GetMeasurement"
-      SourceProductName	      "WholeBodyToolbox"
-      ContentPreviewEnabled   on
-      measuredType	      "Motor Velocity"
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "MATLAB Function"
-      SID		      "624"
-      Ports		      [1, 3]
-      Position		      [565, 624, 695, 666]
-      ZOrder		      759
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      Variant		      off
-      System {
-	Name			"MATLAB Function"
-	Location		[223, 338, 826, 833]
-	Open			off
-	PortBlocksUseCompactNotation off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"23"
-	Block {
-	  BlockType		  Inport
-	  Name			  "fakeMotorPos"
-	  SID			  "624::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "624::20"
-	  Ports			  [1, 1]
-	  Position		  [270, 245, 320, 285]
-	  ZOrder		  11
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "624::19"
-	  Tag			  "Stateflow S-Function impedanceControl_current_only_R2017b 2"
-	  Ports			  [1, 4]
-	  Position		  [180, 102, 230, 203]
-	  ZOrder		  10
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 4]"
-	  SFunctionDeploymentMode off
-	  EnableBusSupport	  on
-	  SFcnIsStateOwnerBlock	  off
-	  Port {
-	    PortNumber		    2
-	    Name		    "qIa"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "qIb"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "qIc"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "624::21"
-	  Position		  [460, 256, 480, 274]
-	  ZOrder		  12
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "qIa"
-	  SID			  "624::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "qIb"
-	  SID			  "624::23"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  14
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "qIc"
-	  SID			  "624::22"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  13
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  20
-	  SrcBlock		  "fakeMotorPos"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "qIa"
-	  ZOrder		  21
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "qIa"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "qIb"
-	  ZOrder		  22
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "qIb"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "qIc"
-	  ZOrder		  23
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  4
-	  DstBlock		  "qIc"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  24
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  25
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "MATLAB Function1"
-      SID		      "627"
-      Ports		      [1, 1]
-      Position		      [565, 497, 695, 553]
-      ZOrder		      762
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      Variant		      off
-      System {
-	Name			"MATLAB Function1"
-	Location		[223, 338, 826, 833]
-	Open			off
-	PortBlocksUseCompactNotation off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"21"
-	Block {
-	  BlockType		  Inport
-	  Name			  "fakeMotorVel"
-	  SID			  "627::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "627::20"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  11
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "627::19"
-	  Tag			  "Stateflow S-Function impedanceControl_current_only_R2017b 1"
-	  Ports			  [1, 2]
-	  Position		  [180, 100, 230, 160]
-	  ZOrder		  10
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 2]"
-	  SFunctionDeploymentMode off
-	  EnableBusSupport	  on
-	  SFcnIsStateOwnerBlock	  off
-	  Port {
-	    PortNumber		    2
-	    Name		    "motorPos"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "627::21"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  12
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "motorPos"
-	  SID			  "627::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  5
-	  SrcBlock		  "fakeMotorVel"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "motorPos"
-	  ZOrder		  6
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "motorPos"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  7
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  8
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
       BlockType		      ManualSwitch
       Name		      "Manual Switch"
       SID		      "605"
       Position		      [720, 242, 750, 278]
       ZOrder		      741
       CurrentSetting	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Motor State 2"
+      SID		      "633"
+      Tag		      "Motor State 2"
+      Description	      "Motor State 2"
+      Ports		      [0, 5]
+      Position		      [415, 433, 565, 737]
+      ZOrder		      766
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Motor State 2"
+	Location		[0, 23, 1440, 846]
+	Open			off
+	PortBlocksUseCompactNotation off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"113"
+	Block {
+	  BlockType		  Gain
+	  Name			  "Elec To Rotor\nangle"
+	  SID			  "628"
+	  Position		  [350, 85, 380, 115]
+	  ZOrder		  763
+	  Gain			  "ELEC_TO_ROTOR_PHASE"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement"
+	  SID			  "607"
+	  Ports			  [0, 1]
+	  Position		  [20, 343, 115, 377]
+	  ZOrder		  743
+	  BackgroundColor	  "[0.513700, 0.851000, 0.670600]"
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor Position"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement1"
+	  SID			  "602"
+	  Ports			  [0, 1]
+	  Position		  [20, 23, 115, 57]
+	  ZOrder		  737
+	  BackgroundColor	  "[0.960000, 0.770000, 0.460000]"
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor Current"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement2"
+	  SID			  "622"
+	  Ports			  [0, 1]
+	  Position		  [20, 83, 115, 117]
+	  ZOrder		  757
+	  BackgroundColor	  "[0.513700, 0.674500, 1.000000]"
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor Velocity"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "MATLAB Function"
+	  SID			  "624"
+	  Ports			  [1, 3]
+	  Position		  [180, 339, 310, 381]
+	  ZOrder		  759
+	  ErrorFcn		  "Stateflow.Translate.translate"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
+	  System {
+	    Name		    "MATLAB Function"
+	    Location		    [223, 338, 826, 833]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "23"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "fakeMotorPos"
+	      SID		      "624::1"
+	      Position		      [20, 101, 40, 119]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      "624::20"
+	      Ports		      [1, 1]
+	      Position		      [270, 245, 320, 285]
+	      ZOrder		      11
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      " SFunction "
+	      SID		      "624::19"
+	      Tag		      "Stateflow S-Function impedanceControl_current_only_R2017b 2"
+	      Ports		      [1, 4]
+	      Position		      [180, 102, 230, 203]
+	      ZOrder		      10
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[1 4]"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      on
+	      SFcnIsStateOwnerBlock   off
+	      Port {
+		PortNumber		2
+		Name			"qIa"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"qIb"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"qIc"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      "624::21"
+	      Position		      [460, 256, 480, 274]
+	      ZOrder		      12
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "qIa"
+	      SID		      "624::5"
+	      Position		      [460, 101, 480, 119]
+	      ZOrder		      -5
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "qIb"
+	      SID		      "624::23"
+	      Position		      [460, 136, 480, 154]
+	      ZOrder		      14
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "qIc"
+	      SID		      "624::22"
+	      Position		      [460, 171, 480, 189]
+	      ZOrder		      13
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      "fakeMotorPos"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "qIa"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "qIa"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "qIb"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "qIb"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "qIc"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "qIc"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      24
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      25
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "MATLAB Function1"
+	  SID			  "627"
+	  Ports			  [1, 1]
+	  Position		  [180, 72, 310, 128]
+	  ZOrder		  762
+	  ErrorFcn		  "Stateflow.Translate.translate"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
+	  System {
+	    Name		    "MATLAB Function1"
+	    Location		    [223, 338, 826, 833]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "21"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "fakeMotorVel"
+	      SID		      "627::1"
+	      Position		      [20, 101, 40, 119]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      "627::20"
+	      Ports		      [1, 1]
+	      Position		      [270, 230, 320, 270]
+	      ZOrder		      11
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      " SFunction "
+	      SID		      "627::19"
+	      Tag		      "Stateflow S-Function impedanceControl_current_only_R2017b 1"
+	      Ports		      [1, 2]
+	      Position		      [180, 100, 230, 160]
+	      ZOrder		      10
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[1 2]"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      on
+	      SFcnIsStateOwnerBlock   off
+	      Port {
+		PortNumber		2
+		Name			"motorPos"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      "627::21"
+	      Position		      [460, 241, 480, 259]
+	      ZOrder		      12
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "motorPos"
+	      SID		      "627::5"
+	      Position		      [460, 101, 480, 119]
+	      ZOrder		      -5
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "fakeMotorVel"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "motorPos"
+	      ZOrder		      6
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "motorPos"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "To Milli Amps"
+	  SID			  "630"
+	  Position		  [350, 25, 380, 55]
+	  ZOrder		  765
+	  Gain			  "CURRENT_IN_MILLI_AMPS"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Curr"
+	  SID			  "634"
+	  Position		  [545, 33, 575, 47]
+	  ZOrder		  766
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Pos"
+	  SID			  "635"
+	  Position		  [545, 93, 575, 107]
+	  ZOrder		  767
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "qIa"
+	  SID			  "636"
+	  Position		  [545, 293, 575, 307]
+	  ZOrder		  768
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "qIb"
+	  SID			  "637"
+	  Position		  [545, 353, 575, 367]
+	  ZOrder		  769
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "qIc"
+	  SID			  "638"
+	  Position		  [545, 413, 575, 427]
+	  ZOrder		  770
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  731
+	  SrcBlock		  "GetMotorMeasurement1"
+	  SrcPort		  1
+	  DstBlock		  "To Milli Amps"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  804
+	  SrcBlock		  "MATLAB Function1"
+	  SrcPort		  1
+	  DstBlock		  "Elec To Rotor\nangle"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  835
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  2
+	  DstBlock		  "qIb"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  831
+	  SrcBlock		  "GetMotorMeasurement"
+	  SrcPort		  1
+	  DstBlock		  "MATLAB Function"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  832
+	  SrcBlock		  "To Milli Amps"
+	  SrcPort		  1
+	  DstBlock		  "Curr"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  834
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  1
+	  Points		  [108, 0; 0, -45]
+	  DstBlock		  "qIa"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  836
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  3
+	  Points		  [108, 0; 0, 45]
+	  DstBlock		  "qIc"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  806
+	  SrcBlock		  "GetMotorMeasurement2"
+	  SrcPort		  1
+	  DstBlock		  "MATLAB Function1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  841
+	  SrcBlock		  "Elec To Rotor\nangle"
+	  SrcPort		  1
+	  DstBlock		  "Pos"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Motor State1"
+      SID		      "650"
+      Tag		      "Motor State 1"
+      Description	      "Motor State 1"
+      Ports		      [0, 3]
+      Position		      [415, 843, 565, 1027]
+      ZOrder		      775
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Motor State1"
+	Location		[0, 23, 1440, 846]
+	Open			off
+	PortBlocksUseCompactNotation off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"248"
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement"
+	  SID			  "652"
+	  Ports			  [0, 1]
+	  Position		  [20, 83, 115, 117]
+	  ZOrder		  772
+	  BackgroundColor	  "[0.513700, 0.851000, 0.670600]"
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor Position"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement1"
+	  SID			  "653"
+	  Ports			  [0, 1]
+	  Position		  [20, 23, 115, 57]
+	  ZOrder		  737
+	  BackgroundColor	  "[0.960000, 0.770000, 0.460000]"
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor Current"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GetMotorMeasurement2"
+	  SID			  "654"
+	  Ports			  [0, 1]
+	  Position		  [20, 158, 115, 192]
+	  ZOrder		  771
+	  BackgroundColor	  "[0.513700, 0.674500, 1.000000]"
+	  LibraryVersion	  "1.675"
+	  SourceBlock		  "WBToolboxLibrary/States/GetMotorMeasurement"
+	  SourceType		  "GetMeasurement"
+	  SourceProductName	  "WholeBodyToolbox"
+	  ContentPreviewEnabled	  on
+	  measuredType		  "Motor Velocity"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "To Degrees"
+	  SID			  "663"
+	  Position		  [350, 85, 380, 115]
+	  ZOrder		  773
+	  Gain			  "180/pi"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "To Degrees/s"
+	  SID			  "664"
+	  Position		  [350, 160, 380, 190]
+	  ZOrder		  774
+	  Gain			  "180/pi"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "To Milli Amps"
+	  SID			  "657"
+	  Position		  [350, 25, 380, 55]
+	  ZOrder		  765
+	  Gain			  "CURRENT_IN_MILLI_AMPS"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Curr"
+	  SID			  "658"
+	  Position		  [545, 33, 575, 47]
+	  ZOrder		  766
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Pos"
+	  SID			  "659"
+	  Position		  [545, 93, 575, 107]
+	  ZOrder		  767
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vel"
+	  SID			  "660"
+	  Position		  [545, 168, 575, 182]
+	  ZOrder		  768
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "GetMotorMeasurement1"
+	  SrcPort		  1
+	  DstBlock		  "To Milli Amps"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "To Milli Amps"
+	  SrcPort		  1
+	  DstBlock		  "Curr"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "GetMotorMeasurement"
+	  SrcPort		  1
+	  DstBlock		  "To Degrees"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "GetMotorMeasurement2"
+	  SrcPort		  1
+	  DstBlock		  "To Degrees/s"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  "To Degrees"
+	  SrcPort		  1
+	  DstBlock		  "Pos"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "To Degrees/s"
+	  SrcPort		  1
+	  DstBlock		  "Vel"
+	  DstPort		  1
+	}
+      }
     }
     Block {
       BlockType		      Product
@@ -1637,26 +1973,57 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-60.35418','MaxYLimReal','73.18766','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','73.18766','"
-      "LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
-      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
-      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
-      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
-      "Label>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','off'),struct('V"
-      "isible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','','','',''}},'N"
-      "umLines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qIa','qIb','qIc'}},'ShowContent',tr"
-      "ue,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-60.35418','MaxYLimReal','73.18766','YLabelRe"
-      "al','','MinYLimMag','0.00000','MaxYLimMag','73.18766','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMag"
-      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
-      "rder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.7176"
-      "47058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 "
-      "0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale',"
-      "'XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurements',struc"
-      "t('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[0.25 0.75],'YCoordinates',[NaN NaN],'Cursor"
-      "Channels',[1 1],'WaveformCursors',false,'ShowHorizontal',true,'ShowVertical',false,'LockCursorSpacing',false,'Sn"
-      "apToData',false,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 85 1440 674]"
-      ")"
+      "nYLimReal','-40950.75','MaxYLimReal','40936.75','YLabelReal','','MinYLimMag','   0.00000','MaxYLimMag','40950.75"
+      "','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0."
+      "686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6"
+      "23529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
+      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Sig"
+      "nalLabel>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','on'),struct("
+      "'Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','','','',''}},"
+      "'NumLines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qIa','qIb','qIc'}},'ShowContent',"
+      "true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-40950.75','MaxYLimReal','40936.75','YLabel"
+      "Real','','MinYLimMag','   0.00000','MaxYLimMag','40950.75','LegendVisibility','On','XGrid',true,'YGrid',true,'Pl"
+      "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'C"
+      "olorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0"
+      ".717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1"
+      " 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutosc"
+      "ale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurements',"
+      "struct('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[11.0025 33.0075],'YCoordinates',[NaN N"
+      "aN],'CursorChannels',[2 1],'WaveformCursors',1,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',fa"
+      "lse,'SnapToData',false,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 85 14"
+      "40 674])"
       NumInputPorts	      "6"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      SID		      "642"
+      Ports		      [4]
+      Position		      [1100, 787, 1220, 1023]
+      ZOrder		      768
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-695.049','MaxYLimReal','6035.71389','YLabelReal','','MinYLim"
+      "Mag',' 0.00000','MaxYLimMag','6035.71389','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false"
+      ",'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0"
+      ".0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 "
+      "0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+      "215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','off'),struct('Visib"
+      "le','on'),struct('Visible','on'),struct('Visible','off'),struct('Visible','off'),struct('Visible','off')}},'User"
+      "DefinedChannelNames',{{'','','','','',''}},'NumLines',4,'LineNames',{{'PWM setpoint','measured current','motor p"
+      "osition','motor velocity'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-"
+      "695.049','MaxYLimReal','6035.71389','YLabelReal','','MinYLimMag',' 0.00000','MaxYLimMag','6035.71389','LegendVis"
+      "ibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803"
+      "922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.41176470588235"
+      "3 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019"
+      "608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('To"
+      "ols','Plot Navigation',true,'PreviousAutoscale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measureme"
+      "nts',true,'Version','2017b','Measurements',struct('traceselector',struct('Line',1),'tcursors',struct('XCoordinat"
+      "es',[80.6888228749444 33.0075],'YCoordinates',[NaN NaN],'CursorChannels',[3 1],'WaveformCursors',1,'ShowHorizont"
+      "al',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',false,'SettingsPanelOpen',1,'MeasurementsPa"
+      "nelOpen',1)))),'Version','2017b','Position',[1 85 1440 674])"
+      NumInputPorts	      "4"
     }
     Block {
       BlockType		      Selector
@@ -1677,11 +2044,62 @@ Model {
     }
     Block {
       BlockType		      Selector
+      Name		      "Selector12"
+      SID		      "648"
+      Ports		      [1, 1]
+      Position		      [915, 916, 955, 954]
+      ZOrder		      767
+      ShowName		      off
+      InputPortWidth	      "ROBOT_DOF"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "JOINTS_TO_PLOT"
+      OutputSizes	      "1"
+      Port {
+	PortNumber		1
+	Name			"motor position"
+      }
+    }
+    Block {
+      BlockType		      Selector
       Name		      "Selector2"
       SID		      "597"
       Ports		      [1, 1]
       Position		      [915, 446, 955, 484]
       ZOrder		      733
+      ShowName		      off
+      InputPortWidth	      "ROBOT_DOF"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "JOINTS_TO_PLOT"
+      OutputSizes	      "1"
+      Port {
+	PortNumber		1
+	Name			"measured current"
+      }
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector3"
+      SID		      "643"
+      Ports		      [1, 1]
+      Position		      [915, 796, 955, 834]
+      ZOrder		      769
+      ShowName		      off
+      InputPortWidth	      "ROBOT_DOF"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "JOINTS_TO_PLOT"
+      OutputSizes	      "1"
+      Port {
+	PortNumber		1
+	Name			"PWM setpoint"
+      }
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector4"
+      SID		      "644"
+      Ports		      [1, 1]
+      Position		      [915, 856, 955, 894]
+      ZOrder		      770
       ShowName		      off
       InputPortWidth	      "ROBOT_DOF"
       IndexOptions	      "Index vector (dialog)"
@@ -1761,6 +2179,23 @@ Model {
       }
     }
     Block {
+      BlockType		      Selector
+      Name		      "Selector9"
+      SID		      "649"
+      Ports		      [1, 1]
+      Position		      [915, 976, 955, 1014]
+      ZOrder		      774
+      ShowName		      off
+      InputPortWidth	      "ROBOT_DOF"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "JOINTS_TO_PLOT"
+      OutputSizes	      "1"
+      Port {
+	PortNumber		1
+	Name			"motor velocity"
+      }
+    }
+    Block {
       BlockType		      Reference
       Name		      "SetMotorReferences"
       SID		      "590"
@@ -1790,17 +2225,6 @@ Model {
       SourceProductName	      "WholeBodyToolbox"
       ContentPreviewEnabled   on
       controlType	      "Current"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "To Milli Amps"
-      SID		      "630"
-      Position		      [735, 450, 765, 480]
-      ZOrder		      765
-      Gain		      "CURRENT_IN_MILLI_AMPS"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      VariantSink
@@ -2026,13 +2450,6 @@ Model {
       }
     }
     Line {
-      ZOrder		      804
-      SrcBlock		      "MATLAB Function1"
-      SrcPort		      1
-      DstBlock		      "Elec To Rotor\nangle"
-      DstPort		      1
-    }
-    Line {
       Name		      "PWM setpoint"
       ZOrder		      704
       Labels		      [1, 1]
@@ -2058,13 +2475,6 @@ Model {
       SrcPort		      1
       DstBlock		      "Scope"
       DstPort		      3
-    }
-    Line {
-      ZOrder		      731
-      SrcBlock		      "GetMotorMeasurement1"
-      SrcPort		      1
-      DstBlock		      "To Milli Amps"
-      DstPort		      1
     }
     Line {
       ZOrder		      782
@@ -2095,8 +2505,17 @@ Model {
       Branch {
 	ZOrder			764
 	Points			[0, 145]
-	DstBlock		"Selector1"
-	DstPort			1
+	Branch {
+	  ZOrder		  844
+	  Points		  [0, 410]
+	  DstBlock		  "Selector3"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  843
+	  DstBlock		  "Selector1"
+	  DstPort		  1
+	}
       }
     }
     Line {
@@ -2149,43 +2568,6 @@ Model {
       DstPort		      5
     }
     Line {
-      ZOrder		      808
-      SrcBlock		      "MATLAB Function"
-      SrcPort		      1
-      Points		      [11, 0; 0, -45]
-      DstBlock		      "Selector5"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      806
-      SrcBlock		      "GetMotorMeasurement2"
-      SrcPort		      1
-      DstBlock		      "MATLAB Function1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      807
-      SrcBlock		      "GetMotorMeasurement"
-      SrcPort		      1
-      DstBlock		      "MATLAB Function"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      813
-      SrcBlock		      "MATLAB Function"
-      SrcPort		      3
-      Points		      [27, 0; 0, 45]
-      DstBlock		      "Selector7"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      812
-      SrcBlock		      "Elec To Rotor\nangle"
-      SrcPort		      1
-      DstBlock		      "Selector8"
-      DstPort		      1
-    }
-    Line {
       Name		      "qIc"
       ZOrder		      814
       Labels		      [1, 1]
@@ -2195,17 +2577,95 @@ Model {
       DstPort		      6
     }
     Line {
-      ZOrder		      815
-      SrcBlock		      "MATLAB Function"
+      ZOrder		      832
+      SrcBlock		      "Motor State 2"
+      SrcPort		      1
+      DstBlock		      "Selector2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      833
+      SrcBlock		      "Motor State 2"
       SrcPort		      2
+      DstBlock		      "Selector8"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      834
+      SrcBlock		      "Motor State 2"
+      SrcPort		      3
+      DstBlock		      "Selector5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      835
+      SrcBlock		      "Motor State 2"
+      SrcPort		      4
       DstBlock		      "Selector6"
       DstPort		      1
     }
     Line {
-      ZOrder		      816
-      SrcBlock		      "To Milli Amps"
+      ZOrder		      836
+      SrcBlock		      "Motor State 2"
+      SrcPort		      5
+      DstBlock		      "Selector7"
+      DstPort		      1
+    }
+    Line {
+      Name		      "PWM setpoint"
+      ZOrder		      837
+      Labels		      [1, 1]
+      SrcBlock		      "Selector3"
       SrcPort		      1
-      DstBlock		      "Selector2"
+      DstBlock		      "Scope1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "motor position"
+      ZOrder		      838
+      Labels		      [1, 1]
+      SrcBlock		      "Selector12"
+      SrcPort		      1
+      DstBlock		      "Scope1"
+      DstPort		      3
+    }
+    Line {
+      Name		      "measured current"
+      ZOrder		      839
+      Labels		      [1, 1]
+      SrcBlock		      "Selector4"
+      SrcPort		      1
+      DstBlock		      "Scope1"
+      DstPort		      2
+    }
+    Line {
+      Name		      "motor velocity"
+      ZOrder		      846
+      Labels		      [1, 1]
+      SrcBlock		      "Selector9"
+      SrcPort		      1
+      DstBlock		      "Scope1"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      847
+      SrcBlock		      "Motor State1"
+      SrcPort		      1
+      DstBlock		      "Selector4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      848
+      SrcBlock		      "Motor State1"
+      SrcPort		      2
+      DstBlock		      "Selector12"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      849
+      SrcBlock		      "Motor State1"
+      SrcPort		      3
+      DstBlock		      "Selector9"
       DstPort		      1
     }
   }
@@ -2236,7 +2696,7 @@ Stateflow {
   chart {
     id			    2
     machine		    1
-    name		    "MATLAB Function1"
+    name		    "Motor State 2/MATLAB Function1"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -2354,13 +2814,13 @@ Stateflow {
   instance {
     id			    8
     machine		    1
-    name		    "MATLAB Function1"
+    name		    "Motor State 2/MATLAB Function1"
     chart		    2
   }
   chart {
     id			    9
     machine		    1
-    name		    "MATLAB Function"
+    name		    "Motor State 2/MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -2532,7 +2992,7 @@ Stateflow {
   instance {
     id			    17
     machine		    1
-    name		    "MATLAB Function"
+    name		    "Motor State 2/MATLAB Function"
     chart		    9
   }
   target {

@@ -10,34 +10,47 @@ for figIdx=1
     h=gca;
     axesObjs=h.Children;
     
-    for axesIdx = 1:5
+    % reset the axes name to index mapping
+    displayName2idx = struct(...
+        'qIa',numel(axesObjs)+1,...
+        'qIb',numel(axesObjs)+1,...
+        'qIc',numel(axesObjs)+1,...
+        'motorposition',numel(axesObjs)+1,...
+        'measuredcurrent',numel(axesObjs)+1);
+    remsp = @(astring) strrep(astring,' ','');
+    
+    for axesIdx = 1:numel(axesObjs)
         switch class(axesObjs(axesIdx))
             case {'matlab.graphics.chart.primitive.Scatter','matlab.graphics.chart.primitive.Stair','matlab.graphics.primitive.Line'}
                 t = axesObjs(axesIdx).XData;
-                y(axesIdx,:) = axesObjs(axesIdx).YData;
+                ydata(axesIdx,:) = axesObjs(axesIdx).YData;
+                displayName2idx.(remsp(axesObjs(axesIdx).DisplayName)) = axesIdx;
                 
             case 'matlab.graphics.chart.primitive.animatedline'
-                [t,y(axesIdx,:)]=getpoints(axesObjs(2));
+                [t,ydata(axesIdx,:)]=getpoints(axesObjs(2));
+                displayName2idx.(remsp(axesObjs(axesIdx).DisplayName)) = axesIdx;
+                
             otherwise
         end
     end
+    ydata(numel(axesObjs)+1,:) = 0;
     
     disp(axesObjs);
     
     % Plot the Current=f(Position) function
-    %pos = y(1,:);
-    qIc = y(1,:); %-51.56;
-    qIb = y(2,:);
-    qIa = y(3,:); %+24.32;
-    pos = y(4,:); % mod(y(2,:)*180/pi,360);
-    measIq = y(5,:);
-    clear t; clear y;
+    %pos = ydata(1,:);
+    qIa = ydata(displayName2idx.qIa,:); %+24.32;
+    qIb = ydata(displayName2idx.qIb,:);
+    qIc = ydata(displayName2idx.qIc,:); %-51.56;
+    pos = mod(ydata(displayName2idx.('motorposition'),:),360);
+    measIq = ydata(displayName2idx.('measuredcurrent'),:);
+    clear t; clear ydata;
     
     % Prepare figure handler
     figuresHandler = DiagPlotFiguresHandler('figs');
     
     
-if 0
+if 1
     % Compute averaged samples
     clusterSize = 10;
     posClusters = (0:60*clusterSize)/clusterSize;
@@ -165,7 +178,7 @@ end
     for idx = 1:numel(pos)
         focEmul = FOCemulator();
         focEmul.updateState(round(pos(idx)*6));
-        [Id(idx),Iq(idx)] = focEmul.computeIqId(qIa(idx),qIc(idx));
+        [Id(idx),Iq(idx)] = focEmul.computeIqId(qIa(idx),qIb(idx),qIc(idx));
     end
     
     % Plot emulated Iq

@@ -34,6 +34,7 @@ classdef FOCemulator < handle
             
             % minimized angle (named "enc"  in the 2FOC code) from electric angle
             obj.delta = mod(obj.enc,60)-30;
+            disp(obj.delta);
             
             % update sector
             obj.sector = floor(obj.enc/60)+1;
@@ -62,11 +63,10 @@ classdef FOCemulator < handle
             obj.sinT = sign(obj.delta)*FOCemulator.sin_table(1+abs(obj.delta));
         end
         
-        function [Id,Iq] = computeIqId(obj,Ia,Ic)
+        function [Id,Iq] = computeIqId(obj,Ia,Ib,Ic)
             %generatePWM Generate the d-q Current timeseries
             
             % real terminal output currents on terminals Ta, Tb, Tc
-            Ib = -Ia-Ic;
             Iphase = struct('Ta',Ia,'Tb',Ib,'Tc',Ic);
             
             % Remap the phase currents to i0, iL, iH
@@ -76,11 +76,11 @@ classdef FOCemulator < handle
             
             % Compute q-d currents
             if (obj.negative_sec)
-                Iq = floor(((iH-iL) * obj.cosT - 3*i0    * obj.sinT)/2^15);
-                Id = floor((    -i0 * obj.cosT - (iH-iL) * obj.sinT)/2^15);
+                Iq = floor(((iH-iL) * obj.cosT - 3*i0    * obj.sinT)*sqrt(1/2)/2^15);
+                Id = floor((    -i0 * obj.cosT - (iH-iL) * obj.sinT)*sqrt(3/2)/2^15);
             else
-                Iq = floor(((iH-iL) * obj.cosT + 3*i0    * obj.sinT)/2^15);
-                Id = floor((     i0 * obj.cosT - (iH-iL) * obj.sinT)/2^15);
+                Iq = floor(((iH-iL) * obj.cosT + 3*i0    * obj.sinT)*sqrt(1/2)/2^15);
+                Id = floor((     i0 * obj.cosT - (iH-iL) * obj.sinT)*sqrt(3/2)/2^15);
             end
         end
         
@@ -98,8 +98,8 @@ classdef FOCemulator < handle
             Vq = Vq/100*32000/2^5; % Vq*10
             
             % Compute outputs
-            V1 = floor((Vq * obj.cosT - 3*Vd * obj.sinT)/2^15);
-            V2 = floor((Vq * obj.sinT +   Vd * obj.cosT)/2^15);
+            V1 = floor((Vq * obj.cosT - 3*Vd * obj.sinT)*sqrt(1/6)/2^15);
+            V2 = floor((Vq * obj.sinT +   Vd * obj.cosT)*sqrt(1/6)/2^15);
             
             if (obj.negative_sec), V2=-V2; end
                 

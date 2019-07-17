@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.527"
+    ComputedModelVersion    "1.547"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -95,7 +95,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 23.0, 1440.0, 823.0]
+      Location		      [0.0, 23.0, 1440.0, 808.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -119,9 +119,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1402.0, 647.0]
-	ZoomFactor		[0.8]
-	Offset			[-106.85841218555265, 33.93595661204705]
+	Extents			[1402.0, 632.0]
+	ZoomFactor		[1.0]
+	Offset			[27.727786752827228, 147.62843295638129]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -139,9 +139,9 @@ Model {
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAADmfwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAQQAAA5kAAABzAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAQQAAA5kAAAByAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAWgAAACwgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAWgAAACswAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACE/////wAAAAAAAAAA/////wEAAAD2/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAF6/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAOh/////wAAAAAAAAAA/"
@@ -155,9 +155,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nunoguedelha"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 04 03:14:35 2019"
-  RTWModifiedTimeStamp	  484110620
-  ModelVersionFormat	  "1.%<AutoIncrement:527>"
+  LastModifiedDate	  "Wed Jul 17 17:18:20 2019"
+  RTWModifiedTimeStamp	  485187293
+  ModelVersionFormat	  "1.%<AutoIncrement:547>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1235,7 +1235,7 @@ Model {
   }
   System {
     Name		    "impedanceControl_phasePWM_test_R2017b"
-    Location		    [0, 23, 1440, 846]
+    Location		    [0, 23, 1440, 831]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1248,7 +1248,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "632"
     Block {
@@ -1298,7 +1298,7 @@ Model {
       Name		      "GetMotorMeasurement"
       SID		      "607"
       Ports		      [0, 1]
-      Position		      [405, 628, 500, 662]
+      Position		      [405, 678, 500, 712]
       ZOrder		      743
       BackgroundColor	      "[0.513700, 0.851000, 0.670600]"
       LibraryVersion	      "1.675"
@@ -1313,7 +1313,7 @@ Model {
       Name		      "GetMotorMeasurement1"
       SID		      "602"
       Ports		      [0, 1]
-      Position		      [405, 448, 500, 482]
+      Position		      [405, 623, 500, 657]
       ZOrder		      737
       BackgroundColor	      "[0.960000, 0.770000, 0.460000]"
       LibraryVersion	      "1.675"
@@ -1356,8 +1356,8 @@ Model {
       BlockType		      SubSystem
       Name		      "MATLAB Function"
       SID		      "624"
-      Ports		      [1, 3]
-      Position		      [565, 624, 695, 666]
+      Ports		      [2, 4]
+      Position		      [565, 613, 695, 722]
       ZOrder		      759
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -1381,13 +1381,22 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"23"
+	SIDHighWatermark	"26"
+	Block {
+	  BlockType		  Inport
+	  Name			  "fakeMotorCurr"
+	  SID			  "624::24"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  15
+	  IconDisplay		  "Port number"
+	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "fakeMotorPos"
 	  SID			  "624::1"
-	  Position		  [20, 101, 40, 119]
+	  Position		  [20, 136, 40, 154]
 	  ZOrder		  -1
+	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -1395,7 +1404,7 @@ Model {
 	  Name			  " Demux "
 	  SID			  "624::20"
 	  Ports			  [1, 1]
-	  Position		  [270, 245, 320, 285]
+	  Position		  [270, 280, 320, 320]
 	  ZOrder		  11
 	  Outputs		  "1"
 	}
@@ -1404,24 +1413,29 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "624::19"
 	  Tag			  "Stateflow S-Function impedanceControl_phasePWM_test_R2017b 2"
-	  Ports			  [1, 4]
-	  Position		  [180, 102, 230, 203]
+	  Ports			  [2, 5]
+	  Position		  [180, 105, 230, 225]
 	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 4]"
+	  Parameters		  "CURRENT_IN_MILLI_AMPS"
+	  PortCounts		  "[2 5]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  SFcnIsStateOwnerBlock	  off
 	  Port {
 	    PortNumber		    2
-	    Name		    "qV1"
+	    Name		    "qVq"
 	  }
 	  Port {
 	    PortNumber		    3
-	    Name		    "qV2"
+	    Name		    "qV1"
 	  }
 	  Port {
 	    PortNumber		    4
+	    Name		    "qV2"
+	  }
+	  Port {
+	    PortNumber		    5
 	    Name		    "qV3"
 	  }
 	}
@@ -1429,78 +1443,103 @@ Model {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
 	  SID			  "624::21"
-	  Position		  [460, 256, 480, 274]
+	  Position		  [460, 291, 480, 309]
 	  ZOrder		  12
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "qVq"
+	  SID			  "624::25"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  16
+	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "qV1"
 	  SID			  "624::5"
-	  Position		  [460, 101, 480, 119]
+	  Position		  [460, 136, 480, 154]
 	  ZOrder		  -5
+	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "qV2"
 	  SID			  "624::23"
-	  Position		  [460, 136, 480, 154]
+	  Position		  [460, 171, 480, 189]
 	  ZOrder		  14
-	  Port			  "2"
+	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "qV3"
 	  SID			  "624::22"
-	  Position		  [460, 171, 480, 189]
+	  Position		  [460, 206, 480, 224]
 	  ZOrder		  13
-	  Port			  "3"
+	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  20
-	  SrcBlock		  "fakeMotorPos"
+	  ZOrder		  66
+	  SrcBlock		  "fakeMotorCurr"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "qV1"
-	  ZOrder		  21
+	  ZOrder		  67
+	  SrcBlock		  "fakeMotorPos"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "qVq"
+	  ZOrder		  68
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
+	  DstBlock		  "qVq"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "qV1"
+	  ZOrder		  69
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
 	  DstBlock		  "qV1"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "qV2"
-	  ZOrder		  22
+	  ZOrder		  70
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
-	  SrcPort		  3
+	  SrcPort		  4
 	  DstBlock		  "qV2"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "qV3"
-	  ZOrder		  23
+	  ZOrder		  71
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
-	  SrcPort		  4
+	  SrcPort		  5
 	  DstBlock		  "qV3"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  24
+	  ZOrder		  72
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  25
+	  ZOrder		  73
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1651,25 +1690,24 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
-      "nYLimReal','-34320.00000','MaxYLimReal','37510.00000','YLabelReal','','MinYLimMag','   0.00000','MaxYLimMag','37"
-      "510.00000','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickC"
-      "olor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980392"
-      "15686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
-      "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Titl"
-      "e','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','on'"
-      "),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','',''"
-      ",'',''}},'NumLines',6,'LineNames',{{'PWM setpoint','measured current','motor position','qV1','qV2','qV3'}},'Show"
-      "Content',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-34320.00000','MaxYLimReal','37510"
-      ".00000','YLabelReal','','MinYLimMag','   0.00000','MaxYLimMag','37510.00000','LegendVisibility','On','XGrid',tru"
-      "e,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6"
-      "86274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0."
-      "0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0."
-      "0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',tr"
-      "ue,'PreviousAutoscale','XY','OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017"
-      "b','Measurements',struct('traceselector',struct('Line',4),'tcursors',struct('XCoordinates',[8.68 0.1644320328724"
-      "47],'YCoordinates',[-3190 0],'CursorChannels',[4 6],'WaveformCursors',1,'ShowHorizontal',false,'ShowVertical',tr"
-      "ue,'LockCursorSpacing',0,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','P"
-      "osition',[1 85 1440 674])"
+      "nYLimReal','-47.97918','MaxYLimReal','71.81266','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','71.81266','"
+      "LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
+      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
+      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
+      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
+      "Label>','LinePropertiesCache',{{struct('Visible','off'),struct('Visible','on'),struct('Visible','on'),struct('Vi"
+      "sible','on'),struct('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{'','','','','',''}},'Nu"
+      "mLines',6,'LineNames',{{'PWM setpoint','VqRef','motor position','qV1','qV2','qV3'}},'ShowContent',true,'Placemen"
+      "t',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-47.97918','MaxYLimReal','71.81266','YLabelReal','','MinY"
+      "LimMag','0.00000','MaxYLimMag','71.81266','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false"
+      ",'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.074"
+      "5098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 "
+      "0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039"
+      "215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY','OnceAt"
+      "Stop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b','Measurements',struct('tracesele"
+      "ctor',struct('Line',4),'tcursors',struct('XCoordinates',[2.2275 6.6825],'YCoordinates',[NaN NaN],'CursorChannels"
+      "',[2 6],'WaveformCursors',1,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',0,'SnapToData',1,'Set"
+      "tingsPanelOpen',1,'MeasurementsPanelOpen',1)))),'Version','2017b','Position',[1 85 1440 674])"
       NumInputPorts	      "6"
     }
     Block {
@@ -1729,7 +1767,7 @@ Model {
       OutputSizes	      "1"
       Port {
 	PortNumber		1
-	Name			"measured current"
+	Name			"VqRef"
       }
     }
     Block {
@@ -1830,17 +1868,6 @@ Model {
       SourceProductName	      "WholeBodyToolbox"
       ContentPreviewEnabled   on
       controlType	      "Current"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "To PWM duty cycle"
-      SID		      "630"
-      Position		      [735, 450, 765, 480]
-      ZOrder		      765
-      Gain		      "CURRENT_IN_MILLI_AMPS"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      VariantSink
@@ -2082,7 +2109,7 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "measured current"
+      Name		      "VqRef"
       ZOrder		      707
       Labels		      [1, 1]
       SrcBlock		      "Selector2"
@@ -2100,10 +2127,10 @@ Model {
       DstPort		      3
     }
     Line {
-      ZOrder		      731
+      ZOrder		      830
       SrcBlock		      "GetMotorMeasurement1"
       SrcPort		      1
-      DstBlock		      "To PWM duty cycle"
+      DstBlock		      "MATLAB Function"
       DstPort		      1
     }
     Line {
@@ -2191,8 +2218,8 @@ Model {
     Line {
       ZOrder		      808
       SrcBlock		      "MATLAB Function"
-      SrcPort		      1
-      Points		      [11, 0; 0, -45]
+      SrcPort		      2
+      Points		      [124, 0; 0, -70]
       DstBlock		      "Selector5"
       DstPort		      1
     }
@@ -2208,13 +2235,12 @@ Model {
       SrcBlock		      "GetMotorMeasurement"
       SrcPort		      1
       DstBlock		      "MATLAB Function"
-      DstPort		      1
+      DstPort		      2
     }
     Line {
       ZOrder		      813
       SrcBlock		      "MATLAB Function"
-      SrcPort		      3
-      Points		      [27, 0; 0, 45]
+      SrcPort		      4
       DstBlock		      "Selector7"
       DstPort		      1
     }
@@ -2237,14 +2263,16 @@ Model {
     Line {
       ZOrder		      815
       SrcBlock		      "MATLAB Function"
-      SrcPort		      2
+      SrcPort		      3
+      Points		      [152, 0; 0, -35]
       DstBlock		      "Selector6"
       DstPort		      1
     }
     Line {
-      ZOrder		      816
-      SrcBlock		      "To PWM duty cycle"
+      ZOrder		      831
+      SrcBlock		      "MATLAB Function"
       SrcPort		      1
+      Points		      [105, 0; 0, -165]
       DstBlock		      "Selector2"
       DstPort		      1
     }
@@ -2277,8 +2305,10 @@ Stateflow {
     name		    "impedanceControl_phasePWM_test_R2017b"
     created		    "12-Mar-2015 18:23:09"
     isLibrary		    0
+    debug {
+    }
     sfVersion		    80000012
-    firstTarget		    18
+    firstTarget		    21
   }
   chart {
     id			    2
@@ -2416,17 +2446,17 @@ Stateflow {
     visible		    1
     subviewS {
     }
-    ssIdHighWaterMark	    7
+    ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    2
     disableImplicitCasting  1
     eml {
-      name		      "parseCurrents"
+      name		      "parsePWMs"
     }
     firstData		    11
-    firstTransition	    16
-    firstJunction	    15
+    firstTransition	    19
+    firstJunction	    18
   }
   state {
     id			    10
@@ -2442,17 +2472,68 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [qV1,qV2,qV3] = parseCurrents(fakeMotorPos)\n\n% Convert to original format used in 2FOC"
-      " code, sent by the CAN transmitter\nqIaqIc = motorYarpPos2motorfocPosUnits(fakeMotorPos);\n\n% Convert to signed"
-      " hexadecimal\nuqIaqIc = typecast(int32(qIaqIc),'uint32');\n\n% Split qIa from qIc\nqIaMask = hex2dec('0000FFFF')"
-      ";\nqIcMask = hex2dec('FFFF0000');\nuqIa = bitand(uqIaqIc,qIaMask);\nuqIc = bitshift(bitand(uqIaqIc,qIcMask),-16)"
-      ";\n\nqV1 = double(typecast(uint16(uqIa),'int16'));\nqV3 = double(typecast(uint16(uqIc),'int16'));\nqV2 = -qV1-qV"
-      "3;\n"
+      script		      "function [qVq,qV1,qV2,qV3] = parsePWMs(fakeMotorCurr,fakeMotorPos, CURRENT_IN_MILLI_AMPS)\n\n% un"
+      "do Yarp conversion on motor current\nqV1 = fakeMotorCurr*CURRENT_IN_MILLI_AMPS; \n\n% Convert to original format"
+      " used in 2FOC code, sent by the CAN transmitter\nw3w2 = motorYarpPos2motorfocPosUnits(fakeMotorPos);\n\n% Conver"
+      "t to signed hexadecimal\nuw3w2 = typecast(int32(w3w2),'uint32');\n\n% Split w3 and w2\nw2Mask = hex2dec('0000FFF"
+      "F');\nw3Mask = hex2dec('FFFF0000');\nuw2 = bitand(uw3w2,w2Mask);\nuw3 = bitshift(bitand(uw3w2,w3Mask),-16);\n\nw"
+      "2 = double(typecast(uint16(uw2),'int16'));\nw3 = double(typecast(uint16(uw3),'int16'));\n\nqVq = w2;\nqV3 = w3;\n"
+      "qV2 = -qV1-qV3;\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    11
+    ssIdNumber		    8
+    name		    "fakeMotorCurr"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [9 0 12]
+  }
+  data {
+    id			    12
+    ssIdNumber		    9
+    name		    "qVq"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [9 11 13]
+  }
+  data {
+    id			    13
     ssIdNumber		    4
     name		    "fakeMotorPos"
     scope		    INPUT_DATA
@@ -2471,10 +2552,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [9 0 12]
+    linkNode		    [9 12 14]
   }
   data {
-    id			    12
+    id			    14
     ssIdNumber		    5
     name		    "qV1"
     scope		    OUTPUT_DATA
@@ -2494,10 +2575,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [9 11 13]
+    linkNode		    [9 13 15]
   }
   data {
-    id			    13
+    id			    15
     ssIdNumber		    7
     name		    "qV2"
     scope		    OUTPUT_DATA
@@ -2519,10 +2600,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [9 12 14]
+    linkNode		    [9 14 16]
   }
   data {
-    id			    14
+    id			    16
     ssIdNumber		    6
     name		    "qV3"
     scope		    OUTPUT_DATA
@@ -2544,10 +2625,35 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [9 13 0]
+    linkNode		    [9 15 17]
+  }
+  data {
+    id			    17
+    ssIdNumber		    10
+    name		    "CURRENT_IN_MILLI_AMPS"
+    scope		    PARAMETER_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [9 16 0]
   }
   junction {
-    id			    15
+    id			    18
     position		    [23.5747 49.5747 7]
     chart		    9
     subviewer		    9
@@ -2556,7 +2662,7 @@ Stateflow {
     linkNode		    [9 0 0]
   }
   transition {
-    id			    16
+    id			    19
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -2564,7 +2670,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      15
+      id		      18
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -2580,13 +2686,13 @@ Stateflow {
     linkNode		    [9 0 0]
   }
   instance {
-    id			    17
+    id			    20
     machine		    1
     name		    "MATLAB Function"
     chart		    9
   }
   target {
-    id			    18
+    id			    21
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
