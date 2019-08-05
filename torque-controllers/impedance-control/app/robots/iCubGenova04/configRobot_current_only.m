@@ -8,6 +8,21 @@ OUTPUT_PWM = 1;
 OUTPUT_CURRENT = 2;
 ELEC_TO_ROTOR_PHASE = 1/6; % 12 pole motor
 CURRENT_IN_MILLI_AMPS = 1000;
+LOGGEDV_VAR_SELECTOR = 1;
+% Name signals respectively
+motorCurrentOutput_signal_names = {...
+    'qIa','qIb','qIc','IQMeasured','IDMeasured',...
+    'qV1','qV2','qV3','qVd','qVq',...
+    'PDC1','PDC2','PDC3',...
+    'qIaOffset','qIbOffset','qIcOffset',...
+    'undef'};
+motorCurrentOutput_signal_name = motorCurrentOutput_signal_names{LOGGEDV_VAR_SELECTOR};
+p = get_param('impedanceControl_current_only_R2017b:602','PortHandles');
+set_param(p.Outport,'Name',[motorCurrentOutput_signal_name '_container']);
+p = get_param('impedanceControl_current_only_R2017b:666','PortHandles');
+set_param(p.Outport,'Name',motorCurrentOutput_signal_name);
+
+
 
 % Robot configurations for WBT3.0
 WBTConfigRobot           = WBToolbox.Configuration;
@@ -55,10 +70,10 @@ PLOT_SELECTOR(JOINTS_TO_PLOT) = 1;
 MOVE_SELECTOR = zeros(1, ROBOT_DOF);
 MOVE_SELECTOR(JOINTS_TO_MOVE) = 1;
 
-AMPLS_SETPOINT_SCALAR = 2;
-FREQS_SETPOINT_SCALAR = 0.1;
+AMPLS_SETPOINT_SCALAR = 8;
+FREQS_SETPOINT_SCALAR = 1;
 
 AMPLS_SETPOINT = AMPLS_SETPOINT_SCALAR*MOVE_SELECTOR;
 FREQS_SETPOINT = FREQS_SETPOINT_SCALAR*MOVE_SELECTOR;
 
-CONST_SETPOINT = -2*MOVE_SELECTOR;
+CONST_SETPOINT = 0*MOVE_SELECTOR;

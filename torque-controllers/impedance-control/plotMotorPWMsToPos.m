@@ -161,7 +161,7 @@ end
     
     [Va,Vb,Vc,Vd,Vq] = deal(zeros(size(pos)));
     [VaF,VbF,VcF,VdF,VqF] = deal(zeros(size(pos)));
-    Vdexp = repmat(40,size(pos)); % percent
+    Vdexp = repmat(0,size(pos)); % percent
     Vqexp = repmat(100,size(pos)); % percent
     
     for idx = 1:numel(pos)

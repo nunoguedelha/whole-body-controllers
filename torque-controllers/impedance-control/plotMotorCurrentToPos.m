@@ -15,9 +15,10 @@ for figIdx=1
         'qIa',numel(axesObjs)+1,...
         'qIb',numel(axesObjs)+1,...
         'qIc',numel(axesObjs)+1,...
-        'motorposition',numel(axesObjs)+1,...
-        'measuredcurrent',numel(axesObjs)+1);
-    remsp = @(astring) strrep(astring,' ','');
+        'motorElecPhase',numel(axesObjs)+1,...
+        'IQMeasured',numel(axesObjs)+1,...
+        'rotorPos',numel(axesObjs)+1);
+    remsp = @(astring) strrep(strrep(strrep(astring,' ',''),'<',''),'>','');
     
     for axesIdx = 1:numel(axesObjs)
         switch class(axesObjs(axesIdx))
@@ -42,8 +43,8 @@ for figIdx=1
     qIa = ydata(displayName2idx.qIa,:); %+24.32;
     qIb = ydata(displayName2idx.qIb,:);
     qIc = ydata(displayName2idx.qIc,:); %-51.56;
-    pos = mod(ydata(displayName2idx.('motorposition'),:),360);
-    measIq = ydata(displayName2idx.('measuredcurrent'),:);
+    pos = mod(ydata(displayName2idx.('motorElecPhase'),:),360);
+    measIq = ydata(displayName2idx.('IQMeasured'),:);
     clear t; clear ydata;
     
     % Prepare figure handler
@@ -52,8 +53,8 @@ for figIdx=1
     
 if 1
     % Compute averaged samples
-    clusterSize = 10;
-    posClusters = (0:60*clusterSize)/clusterSize;
+    clusterSize = 1;
+    posClusters = (0:360*clusterSize)/clusterSize;
     qIFilt = struct(...
         'count',cell(size(posClusters)),...
         'pos',num2cell(posClusters),...
