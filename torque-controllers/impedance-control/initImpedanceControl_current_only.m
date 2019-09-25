@@ -32,8 +32,8 @@ setenv('YARP_ROBOT_NAME','iCubGenova04');
 % setenv('YARP_ROBOT_NAME','iCubGazeboV2_5');
 
 % simulation time  
-Config.Ts              = 0.01;
-Config.SIMULATION_TIME = inf;   
+Config.Ts              = 0.001;
+Config.SIMULATION_TIME = inf;  
 
 % Default behaviour: gravity compensation. If MOVING = true, the robot will also move 
 % all actuated joints following a sine trajectory
